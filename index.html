@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Manual do Recém-Nascido · Dayane Dos Anjos</title>
+<meta property="og:title" content="Manual do Recém-Nascido">
+<meta property="og:description" content="Que bom te ver por aqui. Reuni o que tenho de mais cuidadoso pra você e seu bebê.">
+<meta property="og:image" content="https://manualdorecemnascido.com.br/wp-content/uploads/2024/11/1-1024x576.png">
+<link rel="icon" href="https://manualdorecemnascido.com.br/wp-content/uploads/2023/03/MRN-logo-site-1024x1024.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F6F0E8;          /* fundo */
+    --cream-2:#FBF7F1;        /* superfície clara */
+    --ink:#40352E;            /* texto principal (espresso suave) */
+    --ink-soft:#6F6157;       /* texto secundário */
+    --line:#E4D8CB;           /* hairlines */
+    --clay:#C08863;           /* terracota suave */
+    --rose:#C98B8F;           /* rosé empoeirado */
+    --gold:#B8975C;           /* dourado fosco */
+    --sage:#9FAE9A;           /* verde salvia */
+    --shadow:22px 30px 60px -34px rgba(64,53,46,.45);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Poppins',sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.65;
+    font-weight:300;
+    /* textura sutil */
+    background-image:radial-gradient(circle at 15% 12%, rgba(201,139,143,.06), transparent 42%),
+                     radial-gradient(circle at 85% 88%, rgba(184,151,92,.06), transparent 45%);
+  }
+  .wrap{max-width:660px;margin:0 auto;padding:36px 22px 40px}
+  .serif{font-family:'Fraunces',serif}
+
+  /* ---------- HERO ---------- */
+  .hero{text-align:center;padding:8px 0 4px}
+  .hero .logo{width:64px;height:64px;border-radius:50%;object-fit:cover;margin:0 auto 22px;display:block;box-shadow:0 8px 20px -10px rgba(64,53,46,.5)}
+  .hero .kicker{font-size:.72rem;letter-spacing:3.5px;text-transform:uppercase;color:var(--clay);font-weight:500}
+  .hero h1{font-family:'Fraunces',serif;font-weight:400;font-size:2.5rem;line-height:1.12;margin:16px 0 0;letter-spacing:-.5px}
+  .hero h1 em{font-style:italic;color:var(--rose)}
+  .hero .lead{font-size:1rem;color:var(--ink-soft);max-width:460px;margin:18px auto 0}
+
+  /* portrait arch */
+  .portrait{width:150px;height:186px;margin:30px auto 0;border-radius:120px 120px 18px 18px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+  .portrait img{width:100%;height:100%;object-fit:cover;object-position:center top}
+
+  /* ---------- ASSISTENTE (nudge) ---------- */
+  .assist-nudge{
+    margin:34px 0 6px;background:linear-gradient(135deg,#FBF7F1,#F3E9DD);
+    border:1px solid var(--line);border-radius:22px;padding:22px 22px;
+    display:flex;align-items:center;gap:16px;box-shadow:var(--shadow);cursor:pointer;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .assist-nudge:hover{transform:translateY(-3px)}
+  .assist-nudge .orb{
+    flex-shrink:0;width:52px;height:52px;border-radius:50%;
+    background:radial-gradient(circle at 32% 28%, #E6C9A8, var(--clay));
+    display:flex;align-items:center;justify-content:center;box-shadow:0 10px 22px -10px var(--clay);
+    position:relative;
+  }
+  .assist-nudge .orb::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid rgba(192,136,99,.4);animation:pulse 2.6s ease-out infinite}
+  @keyframes pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.5);opacity:0}}
+  .assist-nudge .orb svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:1.6}
+  .assist-nudge .txt strong{display:block;font-family:'Fraunces',serif;font-weight:500;font-size:1.12rem;color:var(--ink);line-height:1.2}
+  .assist-nudge .txt span{font-size:.86rem;color:var(--ink-soft)}
+  .assist-nudge .arrow{margin-left:auto;color:var(--clay);font-size:1.3rem;flex-shrink:0}
+
+  /* ---------- SECTION LABEL ---------- */
+  .label{display:flex;align-items:center;gap:16px;margin:52px 0 24px}
+  .label::before,.label::after{content:"";height:1px;flex:1;background:var(--line)}
+  .label span{font-size:.74rem;letter-spacing:3px;text-transform:uppercase;color:var(--ink-soft);font-weight:500;white-space:nowrap}
+
+  /* ---------- CARDS ---------- */
+  .card{
+    background:var(--cream-2);border:1px solid var(--line);border-radius:24px;
+    overflow:hidden;box-shadow:var(--shadow);margin-bottom:20px;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .card:hover{transform:translateY(-4px)}
+  .card .media{display:block;line-height:0;position:relative;aspect-ratio:16/10;overflow:hidden}
+  .card .media img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .card:hover .media img{transform:scale(1.04)}
+  .card .body{padding:22px 24px 26px}
+  .card .tag{font-size:.68rem;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;color:var(--clay)}
+  .card h2{font-family:'Fraunces',serif;font-weight:400;font-size:1.55rem;line-height:1.15;margin:9px 0 10px;color:var(--ink)}
+  .card p{font-size:.92rem;color:var(--ink-soft);margin-bottom:20px}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+    font-size:.82rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;
+    color:var(--ink);border:1px solid var(--ink);border-radius:40px;
+    padding:13px 24px;transition:all .22s ease;
+  }
+  .btn:hover{background:var(--ink);color:var(--cream-2)}
+  .btn .a{transition:transform .22s ease}
+  .btn:hover .a{transform:translateX(4px)}
+
+  /* variantes de acento por trilha (borda superior fininha) */
+  .card.t-rose .tag{color:var(--rose)}
+  .card.t-gold .tag{color:var(--gold)}
+  .card.t-sage .tag{color:#7f9179}
+
+  /* two-up em telas maiores */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .duo .card{margin-bottom:0}
+
+  /* featured (curso completo) */
+  .feature{background:linear-gradient(150deg,#453a32,#5a4a3f);color:var(--cream-2);border:none}
+  .feature .body{padding:28px 26px 30px}
+  .feature .tag{color:#E6C9A8}
+  .feature h2{color:#fff;font-size:1.9rem}
+  .feature p{color:rgba(251,247,241,.82)}
+  .feature .btn{color:var(--cream-2);border-color:rgba(251,247,241,.55)}
+  .feature .btn:hover{background:var(--cream-2);color:var(--ink)}
+
+  /* ---------- BIO ---------- */
+  .bio{margin-top:56px;text-align:center;padding:0 6px}
+  .bio .ph{width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 18px;border:1px solid var(--line);box-shadow:var(--shadow)}
+  .bio h3{font-family:'Fraunces',serif;font-weight:400;font-size:1.7rem;color:var(--ink)}
+  .bio .role{font-size:.74rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--clay);margin:6px 0 16px}
+  .bio p{font-size:.94rem;color:var(--ink-soft);max-width:480px;margin:0 auto 12px}
+
+  /* ---------- STATS ---------- */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:34px;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .stats .item{text-align:center}
+  .stats .num{font-family:'Fraunces',serif;font-weight:500;font-size:1.4rem;color:var(--ink);line-height:1}
+  .stats .cap{font-size:.7rem;letter-spacing:.5px;color:var(--ink-soft);margin-top:6px}
+
+  /* ---------- FOOTER ---------- */
+  footer{text-align:center;margin-top:38px}
+  .socials{display:flex;justify-content:center;gap:14px;margin-bottom:26px}
+  .socials a{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:all .2s ease}
+  .socials a:hover{background:var(--ink);border-color:var(--ink)}
+  .socials a svg{width:20px;height:20px;fill:var(--ink-soft);transition:fill .2s ease}
+  .socials a:hover svg{fill:var(--cream-2)}
+  footer .fine{font-size:.78rem;color:var(--ink-soft)}
+  footer .fine a{color:var(--clay);text-decoration:none}
+  footer .cp{font-size:.72rem;color:var(--ink-soft);opacity:.7;margin-top:18px}
+
+  /* ---------- CHAT DRAWER ---------- */
+  .fab{
+    position:fixed;right:20px;bottom:20px;z-index:50;
+    display:flex;align-items:center;gap:11px;cursor:pointer;
+    background:#fff;border:1px solid var(--line);border-radius:50px;
+    padding:9px 18px 9px 9px;box-shadow:0 16px 34px -14px rgba(64,53,46,.55);
+    transition:transform .2s ease;
+  }
+  .fab:hover{transform:translateY(-2px)}
+  .fab .orb{width:42px;height:42px;border-radius:50%;background:radial-gradient(circle at 32% 28%, #E6C9A8, var(--clay));display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .fab .orb svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:1.6}
+  .fab .lbl{font-family:'Fraunces',serif;font-size:.98rem;color:var(--ink);font-weight:500}
+  .fab .lbl small{display:block;font-family:'Poppins';font-weight:300;font-size:.68rem;color:var(--ink-soft);letter-spacing:.3px}
+
+  .overlay{position:fixed;inset:0;background:rgba(40,33,28,.42);backdrop-filter:blur(3px);z-index:60;opacity:0;pointer-events:none;transition:opacity .28s ease}
+  .overlay.on{opacity:1;pointer-events:auto}
+  .drawer{
+    position:fixed;right:0;bottom:0;z-index:70;width:400px;max-width:100vw;height:78vh;max-height:660px;
+    background:var(--cream-2);border-radius:26px 26px 0 0;box-shadow:-10px 0 50px -20px rgba(0,0,0,.4);
+    display:flex;flex-direction:column;transform:translateY(105%);transition:transform .34s cubic-bezier(.22,.61,.36,1);overflow:hidden;
+  }
+  @media(min-width:520px){.drawer{right:20px;bottom:20px;border-radius:26px;height:600px}}
+  .drawer.on{transform:translateY(0)}
+  .drawer .dh{background:linear-gradient(135deg,#5a4a3f,#40352E);color:#fff;padding:20px 22px;display:flex;align-items:center;gap:13px}
+  .drawer .dh .orb{width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 32% 28%, #E6C9A8, var(--clay));display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .drawer .dh .orb svg{width:23px;height:23px;stroke:#fff;fill:none;stroke-width:1.6}
+  .drawer .dh h4{font-family:'Fraunces',serif;font-weight:500;font-size:1.15rem;line-height:1.15}
+  .drawer .dh p{font-size:.74rem;opacity:.8;letter-spacing:.3px}
+  .drawer .dh .x{margin-left:auto;background:rgba(255,255,255,.15);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:1.1rem;line-height:1}
+  .drawer .dbody{flex:1;overflow-y:auto;padding:20px}
+  .drawer iframe{width:100%;height:100%;border:0}
+
+  /* mini-guia (fallback enquanto GPT Maker não está plugado) */
+  .msg{background:#fff;border:1px solid var(--line);border-radius:16px 16px 16px 4px;padding:14px 16px;font-size:.9rem;color:var(--ink);margin-bottom:14px;max-width:88%}
+  .msg.bot{box-shadow:0 6px 16px -12px rgba(64,53,46,.4)}
+  .chips{display:flex;flex-direction:column;gap:9px;margin-top:4px}
+  .chip{text-align:left;background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:12px 15px;font-family:'Poppins';font-size:.88rem;color:var(--ink);cursor:pointer;transition:all .18s ease}
+  .chip:hover{border-color:var(--clay);background:#fff;transform:translateX(3px)}
+  .rec{display:block;text-decoration:none;background:linear-gradient(135deg,#FBF7F1,#F3E9DD);border:1px solid var(--line);border-radius:16px;padding:15px 16px;margin-top:6px;transition:transform .18s ease}
+  .rec:hover{transform:translateY(-2px)}
+  .rec .rt{font-family:'Fraunces',serif;font-weight:500;color:var(--ink);font-size:1.02rem}
+  .rec .rp{font-size:.82rem;color:var(--ink-soft);margin-top:3px}
+  .rec .rg{display:inline-block;margin-top:9px;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--clay);font-weight:500}
+  .note{font-size:.72rem;color:var(--ink-soft);text-align:center;opacity:.75;margin-top:14px}
+
+  @media(max-width:540px){
+    .hero h1{font-size:2.05rem}
+    .duo{grid-template-columns:1fr}
+    .fab .lbl{display:none}
+    .fab{padding:9px}
+    .stats .num{font-size:1.15rem}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <img class="logo" src="https://manualdorecemnascido.com.br/wp-content/uploads/2023/03/MRN-logo-site-1024x1024.png" alt="Manual do Recém-Nascido">
+    <div class="kicker">Manual do Recém-Nascido</div>
+    <h1 class="serif">Que bom te ver <em>por aqui</em></h1>
+    <p class="lead">Reuni tudo o que tenho de mais cuidadoso pra te acompanhar nessa fase — da amamentação ao sono. Escolha por onde começar, ou deixe que eu te ajude a decidir.</p>
+    <div class="portrait"><img src="assets/day.jpg" alt="Dayane Dos Anjos"></div>
+  </header>
+
+  <!-- ASSISTENTE NUDGE -->
+  <div class="assist-nudge" onclick="openChat()">
+    <div class="orb">
+      <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    </div>
+    <div class="txt">
+      <strong>Não sabe por onde começar?</strong>
+      <span>Converse com a assistente e descubra o ideal pra você e seu bebê.</span>
+    </div>
+    <div class="arrow">→</div>
+  </div>
+
+  <!-- CURSOS RÁPIDOS -->
+  <div class="label"><span>Cursos rápidos</span></div>
+  <div class="duo">
+
+    <article class="card t-rose">
+      <a class="media" href="https://perfis.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat"><img src="assets/baby-sono.jpg" alt="Bebê dormindo"></a>
+      <div class="body">
+        <div class="tag">Quiz do sono</div>
+        <h2 class="serif">Dream Baby Pocket</h2>
+        <p>Descubra o perfil de sono do seu bebê e entenda por que ele não dorme no berço — e como resolver.</p>
+        <a class="btn" href="https://perfis.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat">Descobrir <span class="a">→</span></a>
+      </div>
+    </article>
+
+    <article class="card t-gold">
+      <a class="media" href="https://tdapocket.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat"><img src="https://tdapocket.manualdorecemnascido.com.br/assets/hero.webp" alt="Guia da Pega"></a>
+      <div class="body">
+        <div class="tag">Amamentação</div>
+        <h2 class="serif">Guia da Pega</h2>
+        <p>O que fazer pra amamentar sem dor e ver seu bebê saciado, mamando bem e de forma efetiva.</p>
+        <a class="btn" href="https://tdapocket.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat">Quero o guia <span class="a">→</span></a>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- CONSULTAS -->
+  <div class="label"><span>Consultas com a Day</span></div>
+  <div class="duo">
+
+    <article class="card t-sage">
+      <a class="media" href="https://db.manualdorecemnascido.com.br/consulta-do-sono-com-day?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat"><img src="https://manualdorecemnascido.com.br/wp-content/uploads/2025/06/18-1024x576.png" alt="Consulta de Sono"></a>
+      <div class="body">
+        <div class="tag">Atendimento individual</div>
+        <h2 class="serif">Consulta de Sono</h2>
+        <p>A Day te ouve e te orienta pra fazer seu bebê dormir bem, no berço, em poucos dias.</p>
+        <a class="btn" href="https://db.manualdorecemnascido.com.br/consulta-do-sono-com-day?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat">Quero minha consulta <span class="a">→</span></a>
+      </div>
+    </article>
+
+    <article class="card t-rose">
+      <a class="media" href="https://td.manualdorecemnascido.com.br/consulta-de-amamentacao?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat"><img src="https://manualdorecemnascido.com.br/wp-content/uploads/2025/06/16-1024x576.png" alt="Consulta de Amamentação"></a>
+      <div class="body">
+        <div class="tag">Atendimento individual</div>
+        <h2 class="serif">Consulta de Amamentação</h2>
+        <p>A Day analisa o seu caso e orienta o que fazer pra parar de sentir dor e ver seu bebê mamando bem.</p>
+        <a class="btn" href="https://td.manualdorecemnascido.com.br/consulta-de-amamentacao?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat">Quero minha consulta <span class="a">→</span></a>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- CURSO COMPLETO -->
+  <div class="label"><span>Curso completo</span></div>
+  <article class="card feature">
+    <a class="media" href="https://mr.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat"><img src="https://manualdorecemnascido.com.br/wp-content/uploads/2025/06/MRN-LINK-DA-BIO-VETORES-1-1024x576.jpg" alt="Manual do Recém-Nascido"></a>
+    <div class="body">
+      <div class="tag">Tudo em um só lugar</div>
+      <h2 class="serif">Manual do Recém-Nascido</h2>
+      <p>Tudo que você precisa saber antes e depois do bebê chegar: amamentação, sono e cuidados diários, reunidos com carinho num só curso.</p>
+      <a class="btn" href="https://mr.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat">Conhecer o Manual <span class="a">→</span></a>
+    </div>
+  </article>
+
+  <!-- BIO -->
+  <section class="bio">
+    <img class="ph" src="assets/day.jpg" alt="Dayane Dos Anjos">
+    <h3 class="serif">Dayane Dos Anjos</h3>
+    <div class="role">Consultora materno-infantil</div>
+    <p>Sou mãe e consultora de sono, amamentação e cuidados com o bebê. Oriento mães de forma gentil e carinhosa, pra um lar tranquilo, um bebê feliz e uma família unida.</p>
+    <p>Eu te ensino a ter um bebê calminho, que mama e dorme bem. ♥</p>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="item"><div class="num">+21 mil</div><div class="cap">alunas</div></div>
+    <div class="item"><div class="num">+586 mil</div><div class="cap">Instagram</div></div>
+    <div class="item"><div class="num">+770 mil</div><div class="cap">YouTube</div></div>
+    <div class="item"><div class="num">+630 mil</div><div class="cap">TikTok</div></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="socials">
+      <a href="https://instagram.com/manualdorecemnascido" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2zm0 1.8c-3.15 0-3.5.01-4.74.07-.9.04-1.38.19-1.71.32-.43.17-.74.37-1.06.69-.32.32-.52.63-.69 1.06-.13.33-.28.81-.32 1.71C3.21 9.09 3.2 9.44 3.2 12s.01 2.91.07 4.15c.04.9.19 1.38.32 1.71.17.43.37.74.69 1.06.32.32.63.52 1.06.69.33.13.81.28 1.71.32 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c.9-.04 1.38-.19 1.71-.32.43-.17.74-.37 1.06-.69.32-.32.52-.63.69-1.06.13-.33.28-.81.32-1.71.06-1.24.07-1.59.07-4.15s-.01-2.91-.07-4.15c-.04-.9-.19-1.38-.32-1.71a2.86 2.86 0 0 0-.69-1.06 2.86 2.86 0 0 0-1.06-.69c-.33-.13-.81-.28-1.71-.32C15.5 4.01 15.15 4 12 4zm0 3.07A4.93 4.93 0 1 1 12 16.93 4.93 4.93 0 0 1 12 7.07zm0 1.8a3.13 3.13 0 1 0 0 6.26 3.13 3.13 0 0 0 0-6.26zm5.15-.95a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0z"/></svg></a>
+      <a href="https://youtube.com/manualdorecemnascido" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg></a>
+      <a href="https://tiktok.com/@manualdorecemnascido" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.01-2.82h-3.09v12.4a2.43 2.43 0 1 1-2.43-2.43c.25 0 .5.04.74.12V9.96a5.54 5.54 0 0 0-.74-.05 5.52 5.52 0 1 0 5.52 5.52V9.13a7.34 7.34 0 0 0 4.3 1.38V7.42a4.28 4.28 0 0 1-3.29-1.6z"/></svg></a>
+    </div>
+    <div class="fine">Parcerias &amp; publicidade · <a href="mailto:assessoria@manualdorecemnascido.com.br">assessoria@manualdorecemnascido.com.br</a></div>
+    <div class="cp">© Manual do Recém-Nascido. Todos os direitos reservados.</div>
+  </footer>
+
+</div>
+
+<!-- FAB -->
+<div class="fab" onclick="openChat()">
+  <div class="orb"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+  <div class="lbl">Assistente<small>tire suas dúvidas</small></div>
+</div>
+
+<!-- CHAT -->
+<div class="overlay" id="ov" onclick="closeChat()"></div>
+<aside class="drawer" id="dw" role="dialog" aria-label="Assistente">
+  <div class="dh">
+    <div class="orb"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+    <div>
+      <h4 class="serif">Assistente do Manual</h4>
+      <p>respondo em segundos ♥</p>
+    </div>
+    <button class="x" onclick="closeChat()" aria-label="Fechar">✕</button>
+  </div>
+  <div class="dbody" id="dbody"></div>
+</aside>
+
+<script>
+/* ============================================================
+   CONFIG DO CHATBOT
+   Para plugar o GPT Maker: cole a URL do widget (Canal Web / iframe)
+   do seu agente em GPTMAKER_IFRAME. Enquanto vazio, roda o
+   mini-guia local abaixo (demonstração do conceito).
+   ============================================================ */
+const GPTMAKER_IFRAME = ""; // ex.: "https://app.gptmaker.ai/widget/SEU_AGENTE"
+
+const PRODUCTS = {
+  sono_pocket:  {t:"Dream Baby Pocket", p:"Quiz que revela o perfil de sono do bebê e o caminho pra ele dormir no berço.", g:"Quiz do sono", u:"https://perfis.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=chatbot"},
+  pega:         {t:"Guia da Pega", p:"Curso rápido pra amamentar sem dor e com o bebê mamando de forma efetiva.", g:"Amamentação", u:"https://tdapocket.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=chatbot"},
+  cons_sono:    {t:"Consulta de Sono", p:"Atendimento individual com a Day pra resolver o sono do seu bebê.", g:"Consulta individual", u:"https://db.manualdorecemnascido.com.br/consulta-do-sono-com-day?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=chatbot"},
+  cons_amam:    {t:"Consulta de Amamentação", p:"Atendimento individual pra parar a dor e ver o bebê mamando bem.", g:"Consulta individual", u:"https://td.manualdorecemnascido.com.br/consulta-de-amamentacao?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=chatbot"},
+  manual:       {t:"Manual do Recém-Nascido", p:"O curso completo: amamentação, sono e cuidados do zero aos primeiros meses.", g:"Curso completo", u:"https://mr.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=chatbot"}
+};
+
+const ov=document.getElementById('ov'), dw=document.getElementById('dw'), db=document.getElementById('dbody');
+let started=false;
+function openChat(){ov.classList.add('on');dw.classList.add('on');if(!started){started=true;boot();}}
+function closeChat(){ov.classList.remove('on');dw.classList.remove('on');}
+
+function boot(){
+  if(GPTMAKER_IFRAME){
+    db.style.padding='0';
+    db.innerHTML='<iframe src="'+GPTMAKER_IFRAME+'" allow="microphone; clipboard-write"></iframe>';
+    return;
+  }
+  guide();
+}
+
+/* ---- mini-guia local (fallback / demo) ---- */
+function bubble(html){const d=document.createElement('div');d.className='msg bot';d.innerHTML=html;db.appendChild(d);db.scrollTop=db.scrollHeight;return d;}
+function chips(opts){const w=document.createElement('div');w.className='chips';opts.forEach(o=>{const b=document.createElement('button');b.className='chip';b.textContent=o.label;b.onclick=o.fn;w.appendChild(b);});db.appendChild(w);db.scrollTop=db.scrollHeight;return w;}
+function rec(keys){keys.forEach(k=>{const pr=PRODUCTS[k];const a=document.createElement('a');a.className='rec';a.href=pr.u;a.target='_blank';a.innerHTML='<div class="rt">'+pr.t+'</div><div class="rp">'+pr.p+'</div><span class="rg">'+pr.g+' →</span>';db.appendChild(a);});db.scrollTop=db.scrollHeight;}
+
+function guide(){
+  db.innerHTML='';
+  bubble('Oi, que alegria te ver! 💛 Me conta: qual é a sua maior dúvida com o bebê agora?');
+  chips([
+    {label:'😴  O sono / ele não dorme no berço', fn:()=>flow('sono')},
+    {label:'🤱  A amamentação / dor pra amamentar', fn:()=>flow('amam')},
+    {label:'🍼  Sou gestante / quero me preparar', fn:()=>flow('gest')},
+    {label:'✨  Quero ver tudo', fn:()=>flow('tudo')}
+  ]);
+}
+function flow(tema){
+  document.querySelectorAll('.chips').forEach(c=>c.remove());
+  if(tema==='sono'){
+    bubble('Entendo demais. O primeiro passo é descobrir <b>o perfil de sono</b> do seu bebê — é rapidinho e já te mostra o que fazer:');
+    rec(['sono_pocket']);
+    bubble('Se você quer a Day olhando o seu caso de perto, a consulta individual resolve em poucos dias:');
+    rec(['cons_sono']);
+  }else if(tema==='amam'){
+    bubble('Amamentar não precisa doer. Começa pelo <b>Guia da Pega</b> pra ajustar a pega e o bebê mamar bem:');
+    rec(['pega']);
+    bubble('E se quiser um olhar individual pro seu caso:');
+    rec(['cons_amam']);
+  }else if(tema==='gest'){
+    bubble('Se preparar antes muda tudo. O <b>Manual do Recém-Nascido</b> te deixa pronta pra amamentação, sono e cuidados desde o primeiro dia:');
+    rec(['manual']);
+  }else{
+    bubble('Perfeito! Aqui está tudo o que a Day preparou pra você:');
+    rec(['sono_pocket','pega','cons_sono','cons_amam','manual']);
+  }
+  const w=document.createElement('div');w.className='chips';const b=document.createElement('button');b.className='chip';b.textContent='↩  Recomeçar';b.onclick=guide;w.appendChild(b);db.appendChild(w);
+  const n=document.createElement('div');n.className='note';n.textContent='Assistente inteligente (GPT Maker) em ativação — em breve com respostas personalizadas.';db.appendChild(n);
+  db.scrollTop=db.scrollHeight;
+}
+</script>
+</body>
+</html>
