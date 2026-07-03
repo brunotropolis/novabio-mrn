@@ -250,18 +250,16 @@
 <script>
   // Abre o balão do GPT Maker a partir do CTA "Não sabe por onde começar?" do topo.
   function openAssistant(){
-    var cand = document.querySelector(
-      '[id*="gptmaker" i] [role="button"], [id*="gptmaker" i] button, '+
-      '[class*="gptmaker" i] button, [class*="gpt-maker" i] button, '+
-      '#gptmaker-float, .gptmaker-float, [aria-label*="chat" i]'
-    );
-    if(cand){ try{ cand.click(); return; }catch(e){} }
-    // fallback: clica no elemento flutuante inferior-direito injetado pelo widget
-    var nodes=document.querySelectorAll('body > div, body > button, body > iframe');
+    // API oficial exposta pelo float.js do GPT Maker
+    if(window.GPT_CHAT_IFRAME_FUNCTIONS && window.GPT_CHAT_IFRAME_FUNCTIONS.toogleChat){
+      try{ window.GPT_CHAT_IFRAME_FUNCTIONS.toogleChat(true); return; }catch(e){}
+    }
+    // fallback: clica no botão flutuante que o widget injeta no canto inferior-direito
+    var nodes=document.querySelectorAll('body > div');
     for(var i=nodes.length-1;i>=0;i--){
       var s=getComputedStyle(nodes[i]);
-      if(s.position==='fixed' && (parseInt(s.right)<80) && (parseInt(s.bottom)<120)){
-        try{ (nodes[i].querySelector('button,[role=button]')||nodes[i]).click(); return; }catch(e){}
+      if(s.position==='fixed' && parseInt(s.right)<80 && parseInt(s.bottom)<80){
+        var b=nodes[i].querySelector('button'); if(b){ try{ b.click(); return; }catch(e){} }
       }
     }
   }
