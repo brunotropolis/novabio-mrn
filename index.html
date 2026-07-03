@@ -23,24 +23,24 @@
   body{
     font-family:'Poppins',sans-serif;background:var(--cream);color:var(--ink);
     -webkit-font-smoothing:antialiased;line-height:1.55;font-weight:300;
-    background-image:radial-gradient(circle at 12% 8%, rgba(201,139,143,.05), transparent 40%),
-                     radial-gradient(circle at 88% 96%, rgba(184,151,92,.05), transparent 44%);
+    background-image:radial-gradient(circle at 12% 6%, rgba(201,139,143,.05), transparent 38%),
+                     radial-gradient(circle at 88% 97%, rgba(184,151,92,.05), transparent 42%);
   }
-  .wrap{max-width:500px;margin:0 auto;padding:34px 20px 40px}
+  .wrap{max-width:500px;margin:0 auto;padding:34px 18px 40px}
   .serif{font-family:'Fraunces',serif}
 
   /* ---------- PROFILE ---------- */
   .profile{text-align:center;margin-bottom:8px}
-  .profile .ph{width:104px;height:104px;border-radius:50%;object-fit:cover;object-position:center top;margin:0 auto 16px;border:2px solid #fff;box-shadow:0 12px 26px -12px rgba(64,53,46,.55)}
-  .profile h1{font-family:'Fraunces',serif;font-weight:400;font-size:1.85rem;letter-spacing:.3px;line-height:1.1}
+  .profile .ph{width:110px;height:110px;border-radius:50%;object-fit:cover;object-position:center 22%;margin:0 auto 16px;border:3px solid #fff;box-shadow:0 12px 26px -12px rgba(64,53,46,.55)}
+  .profile h1{font-family:'Fraunces',serif;font-weight:400;font-size:1.9rem;letter-spacing:.3px;line-height:1.1}
   .profile .role{font-size:.7rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--clay);margin-top:8px;font-weight:500}
   .profile .tag{font-size:.94rem;color:var(--ink-soft);max-width:400px;margin:14px auto 0}
 
   /* ---------- ASSISTENTE (CTA topo) ---------- */
   .assist{
-    display:flex;align-items:center;gap:14px;width:100%;margin:26px 0 6px;cursor:pointer;
+    display:flex;align-items:center;gap:14px;width:100%;margin:24px 0 8px;cursor:pointer;
     background:linear-gradient(135deg,#5a4a3f,#40352E);color:var(--cream-2);
-    border:none;border-radius:20px;padding:16px 18px;box-shadow:var(--shadow);
+    border:none;border-radius:20px;padding:15px 18px;box-shadow:var(--shadow);
     transition:transform .18s ease;text-align:left;font-family:'Poppins';
   }
   .assist:hover{transform:translateY(-2px)}
@@ -50,38 +50,52 @@
   .assist .orb svg{width:23px;height:23px;stroke:#fff;fill:none;stroke-width:1.6}
   .assist .t strong{display:block;font-family:'Fraunces',serif;font-weight:500;font-size:1.06rem;line-height:1.2}
   .assist .t span{font-size:.8rem;opacity:.82}
-  .assist .chev{margin-left:auto;opacity:.8;font-size:1.2rem;flex-shrink:0}
+  .assist .chev{margin-left:auto;opacity:.85;font-size:1.2rem;flex-shrink:0}
 
-  /* ---------- SECTION HEADER ---------- */
-  .sect{display:flex;align-items:center;gap:14px;margin:34px 0 16px}
-  .sect::before,.sect::after{content:"";height:1px;flex:1;background:var(--line)}
-  .sect span{font-size:.72rem;letter-spacing:2.6px;text-transform:uppercase;color:var(--ink-soft);font-weight:500;white-space:nowrap}
-
-  /* ---------- ROW (link item minimalista) ---------- */
-  .row{
-    display:flex;align-items:center;gap:15px;width:100%;
-    background:var(--cream-2);border:1px solid var(--line);border-radius:18px;
-    padding:12px 16px 12px 12px;margin-bottom:11px;text-decoration:none;color:var(--ink);
-    box-shadow:var(--shadow);transition:transform .16s ease, border-color .16s ease;
+  /* ---------- PANEL (seção com peso próprio) ---------- */
+  .panel{
+    border:1px solid var(--a-bd);border-radius:26px;background:var(--a-bg);
+    padding:16px 15px 6px;margin-top:22px;position:relative;
   }
-  .row:hover{transform:translateY(-2px);border-color:var(--clay)}
-  .row .thumb{width:54px;height:54px;border-radius:13px;object-fit:cover;flex-shrink:0}
-  .row .ico{width:54px;height:54px;border-radius:13px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#F1E7DA}
-  .row .ico svg{width:26px;height:26px}
-  .row .rtxt{flex:1;min-width:0}
-  .row .rtitle{font-family:'Fraunces',serif;font-weight:500;font-size:1.08rem;line-height:1.2;color:var(--ink)}
-  .row .rsub{font-size:.8rem;color:var(--ink-soft);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .row .chev{color:var(--clay);font-size:1.25rem;flex-shrink:0;transition:transform .16s ease}
-  .row:hover .chev{transform:translateX(3px)}
-  .row .tag{display:inline-block;font-size:.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--clay);font-weight:600;margin-bottom:3px}
+  .phead{display:flex;align-items:center;gap:11px;margin:2px 4px 14px}
+  .phead .pic{width:36px;height:36px;border-radius:11px;background:var(--a-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .phead .pic svg{width:20px;height:20px;stroke:var(--a);fill:none;stroke-width:1.7}
+  .phead .pt{font-size:.74rem;letter-spacing:2.4px;text-transform:uppercase;color:var(--a-dk);font-weight:600}
+  .phead .pn{margin-left:auto;font-size:.66rem;color:var(--a);opacity:.75;letter-spacing:.5px}
 
-  /* placeholder (grupos de ofertas a preencher) */
-  .row.soon{opacity:.62;pointer-events:none;border-style:dashed}
+  .p-rapidos  {--a:#B8975C;--a-dk:#8a6f36;--a-soft:#F0E6D2;--a-bd:#E9DBC0;--a-bg:#FBF6EC}
+  .p-consultas{--a:#8AA083;--a-dk:#5c7355;--a-soft:#E4EADF;--a-bd:#D9E2D2;--a-bg:#F4F7F1}
+  .p-completos{--a:#C98B8F;--a-dk:#a05f63;--a-soft:#F3E2E3;--a-bd:#ECD4D6;--a-bg:#FBF1F1}
+  .p-ofertas  {--a:#3AAE6B;--a-dk:#2c8a53;--a-soft:#DDF2E6;--a-bd:#CBEAD7;--a-bg:#F1FAF4}
+  .p-redes    {--a:#9B87B0;--a-dk:#6e5c88;--a-soft:#EBE4F1;--a-bd:#E1D8EB;--a-bg:#F6F2FA}
+  .p-parcerias{--a:#C08863;--a-dk:#8a5c3a;--a-soft:#F1E4D7;--a-bd:#E8D7C7;--a-bg:#FAF3EC}
+
+  /* ---------- ROW ---------- */
+  .row{
+    display:flex;align-items:center;gap:14px;width:100%;
+    background:var(--cream-2);border:1px solid var(--line);border-radius:18px;
+    padding:11px 15px 11px 11px;margin-bottom:11px;text-decoration:none;color:var(--ink);
+    box-shadow:0 8px 18px -14px rgba(64,53,46,.5);transition:transform .16s ease, border-color .16s ease;
+  }
+  .row:hover{transform:translateY(-2px);border-color:var(--a,var(--clay))}
+  .row .thumb{width:56px;height:56px;border-radius:13px;object-fit:cover;flex-shrink:0}
+  .row .ico{width:56px;height:56px;border-radius:13px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:var(--a-soft)}
+  .row .ico svg{width:27px;height:27px}
+  .row .rtxt{flex:1;min-width:0}
+  .row .rtitle{font-family:'Fraunces',serif;font-weight:500;font-size:1.05rem;line-height:1.18;color:var(--ink)}
+  .row .rsub{font-size:.79rem;color:var(--ink-soft);margin-top:3px;line-height:1.35}
+  .row .chev{color:var(--a,var(--clay));font-size:1.25rem;flex-shrink:0;transition:transform .16s ease}
+  .row:hover .chev{transform:translateX(3px)}
+  .row .tag{display:inline-block;font-size:.6rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--a-dk,var(--clay));font-weight:600;margin-bottom:3px}
+  .row .seal{display:inline-flex;align-items:center;gap:5px;margin-top:6px;font-size:.6rem;letter-spacing:1.4px;text-transform:uppercase;font-weight:600;color:var(--gold);background:#F3E9D6;border:1px solid #E6D4B0;border-radius:20px;padding:3px 9px}
+  .panel .row:last-child{margin-bottom:12px}
+
+  .row.soon{opacity:.6;pointer-events:none;border-style:dashed}
   .row.soon .chev{opacity:0}
-  .row.soon .rsub{color:var(--clay)}
+  .row.soon .rsub{color:var(--a-dk)}
 
   /* ---------- FOOTER ---------- */
-  footer{text-align:center;margin-top:40px}
+  footer{text-align:center;margin-top:34px}
   .footlogo{width:44px;height:44px;border-radius:50%;object-fit:cover;margin:0 auto 12px;display:block;opacity:.85}
   footer .cp{font-size:.72rem;color:var(--ink-soft);opacity:.72}
 
@@ -120,7 +134,7 @@
 
   <!-- PROFILE -->
   <header class="profile">
-    <img class="ph" src="assets/day.jpg" alt="Dayane Dos Anjos">
+    <img class="ph" src="assets/day/profile.jpg" alt="Dayane Dos Anjos">
     <h1 class="serif">Dayane Dos Anjos</h1>
     <div class="role">Manual do Recém-Nascido</div>
     <p class="tag">Consultora de sono, amamentação e cuidados com o bebê. Escolha por onde começar 💛</p>
@@ -134,72 +148,94 @@
   </button>
 
   <!-- CURSOS RÁPIDOS -->
-  <div class="sect"><span>Cursos rápidos</span></div>
-  <a class="row" href="https://perfis.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat">
-    <img class="thumb" src="assets/baby-sono.jpg" alt="">
-    <span class="rtxt"><span class="tag">Quiz do sono</span><div class="rtitle">Dream Baby Pocket</div><div class="rsub">Descubra o perfil de sono do seu bebê</div></span>
-    <span class="chev">→</span>
-  </a>
-  <a class="row" href="https://tdapocket.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat">
-    <img class="thumb" src="https://tdapocket.manualdorecemnascido.com.br/assets/hero.webp" alt="">
-    <span class="rtxt"><span class="tag">Amamentação</span><div class="rtitle">Guia da Pega</div><div class="rsub">Amamente sem dor e com o bebê saciado</div></span>
-    <span class="chev">→</span>
-  </a>
+  <section class="panel p-rapidos">
+    <div class="phead"><span class="pic"><svg viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H12l-1 8.5L19.5 10H12l1-8z"/></svg></span><span class="pt">Cursos rápidos</span><span class="pn">acesso imediato</span></div>
+    <a class="row" href="https://perfis.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat">
+      <img class="thumb" src="assets/day/sono-pocket.jpg" alt="">
+      <span class="rtxt"><div class="rtitle">Descubra o perfil de sono do seu bebê</div><span class="seal">✦ Dream Baby Pocket</span></span>
+      <span class="chev">→</span>
+    </a>
+    <a class="row" href="https://tdapocket.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat">
+      <img class="thumb" src="assets/day/guia-pega.jpg" alt="">
+      <span class="rtxt"><span class="tag">Amamentação</span><div class="rtitle">Guia da Pega</div><div class="rsub">Amamente sem dor e com o bebê saciado</div></span>
+      <span class="chev">→</span>
+    </a>
+  </section>
 
   <!-- CONSULTAS -->
-  <div class="sect"><span>Consultas</span></div>
-  <a class="row" href="https://db.manualdorecemnascido.com.br/consulta-do-sono-com-day?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat">
-    <img class="thumb" src="https://manualdorecemnascido.com.br/wp-content/uploads/2025/06/18-1024x576.png" alt="">
-    <span class="rtxt"><span class="tag">Individual com a Day</span><div class="rtitle">Consulta de Sono</div><div class="rsub">Seu bebê dormindo no berço em poucos dias</div></span>
-    <span class="chev">→</span>
-  </a>
-  <a class="row" href="https://td.manualdorecemnascido.com.br/consulta-de-amamentacao?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat">
-    <img class="thumb" src="https://manualdorecemnascido.com.br/wp-content/uploads/2025/06/16-1024x576.png" alt="">
-    <span class="rtxt"><span class="tag">Individual com a Day</span><div class="rtitle">Consulta de Amamentação</div><div class="rsub">Pare a dor e veja seu bebê mamando bem</div></span>
-    <span class="chev">→</span>
-  </a>
+  <section class="panel p-consultas">
+    <div class="phead"><span class="pic"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span><span class="pt">Consultas</span><span class="pn">individual com a Day</span></div>
+    <a class="row" href="https://db.manualdorecemnascido.com.br/consulta-do-sono-com-day?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat">
+      <img class="thumb" src="assets/day/consulta-sono.jpg" alt="">
+      <span class="rtxt"><span class="tag">Atendimento individual</span><div class="rtitle">Consulta de Sono</div><div class="rsub">Seu bebê dormindo no berço em poucos dias</div></span>
+      <span class="chev">→</span>
+    </a>
+    <a class="row" href="https://td.manualdorecemnascido.com.br/consulta-de-amamentacao?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat">
+      <img class="thumb" src="assets/day/consulta-amam.jpg" alt="">
+      <span class="rtxt"><span class="tag">Atendimento individual</span><div class="rtitle">Consulta de Amamentação</div><div class="rsub">Pare a dor e veja seu bebê mamando bem</div></span>
+      <span class="chev">→</span>
+    </a>
+  </section>
 
   <!-- CURSOS COMPLETOS -->
-  <div class="sect"><span>Cursos completos</span></div>
-  <a class="row" href="https://mr.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat">
-    <img class="thumb" src="https://manualdorecemnascido.com.br/wp-content/uploads/2025/06/MRN-LINK-DA-BIO-VETORES-1-1024x576.jpg" alt="">
-    <span class="rtxt"><span class="tag">Tudo em um só lugar</span><div class="rtitle">Manual do Recém-Nascido</div><div class="rsub">Amamentação, sono e cuidados do zero</div></span>
-    <span class="chev">→</span>
-  </a>
+  <section class="panel p-completos">
+    <div class="phead"><span class="pic"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h6v16H6a2 2 0 0 0-2 2V5z"/><path d="M20 5a2 2 0 0 0-2-2h-6v16h6a2 2 0 0 1 2 2V5z"/></svg></span><span class="pt">Cursos completos</span><span class="pn">do zero ao domínio</span></div>
+    <a class="row" href="https://mr.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat">
+      <img class="thumb" src="assets/day/manual.jpg" alt="">
+      <span class="rtxt"><span class="tag">Tudo em um só lugar</span><div class="rtitle">Manual do Recém-Nascido</div><div class="rsub">Amamentação, sono e cuidados do zero</div></span>
+      <span class="chev">→</span>
+    </a>
+    <a class="row" href="https://db.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat">
+      <img class="thumb" src="assets/day/metodo-sono.jpg" alt="">
+      <span class="rtxt"><span class="tag">Curso + acompanhamento</span><div class="rtitle">Método de Sono Dream Baby</div><div class="rsub">Tudo sobre o sono do bebê + acompanhamento individual, como uma consultora no seu WhatsApp</div></span>
+      <span class="chev">→</span>
+    </a>
+    <a class="row" href="https://td.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat">
+      <img class="thumb" src="assets/day/tecnica-anjos.jpg" alt="">
+      <span class="rtxt"><span class="tag">Curso + acompanhamento</span><div class="rtitle">Técnica dos Anjos na Amamentação</div><div class="rsub">Tudo sobre amamentação + acompanhamento individual, como uma consultora no seu WhatsApp</div></span>
+      <span class="chev">→</span>
+    </a>
+  </section>
 
   <!-- GRUPOS DE OFERTAS -->
-  <div class="sect"><span>Grupos de ofertas</span></div>
-  <a class="row soon" href="#">
-    <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
-    <span class="rtxt"><div class="rtitle">Ofertas Maternas no WhatsApp</div><div class="rsub">enviar o link do grupo →</div></span>
-    <span class="chev">→</span>
-  </a>
+  <section class="panel p-ofertas">
+    <div class="phead"><span class="pic"><svg viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.2-7.2A2 2 0 0 1 2.8 12V4a1 1 0 0 1 1-1H12a2 2 0 0 1 1.4.6l7.2 7.2a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.3" fill="currentColor" stroke="none"/></svg></span><span class="pt">Grupos de ofertas</span></div>
+    <a class="row soon" href="#">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
+      <span class="rtxt"><div class="rtitle">Ofertas Maternas no WhatsApp</div><div class="rsub">enviar o link do grupo →</div></span>
+      <span class="chev">→</span>
+    </a>
+  </section>
 
   <!-- REDES SOCIAIS -->
-  <div class="sect"><span>Redes sociais</span></div>
-  <a class="row" href="https://instagram.com/manualdorecemnascido" target="_blank" rel="noopener">
-    <span class="ico"><svg viewBox="0 0 24 24" fill="#C13584"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2zm0 3.07A4.93 4.93 0 1 1 12 16.93 4.93 4.93 0 0 1 12 7.07zm0 1.8a3.13 3.13 0 1 0 0 6.26 3.13 3.13 0 0 0 0-6.26zm5.15-.95a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0z"/></svg></span>
-    <span class="rtxt"><div class="rtitle">Instagram</div><div class="rsub">@manualdorecemnascido · +586 mil</div></span>
-    <span class="chev">→</span>
-  </a>
-  <a class="row" href="https://youtube.com/manualdorecemnascido" target="_blank" rel="noopener">
-    <span class="ico"><svg viewBox="0 0 24 24" fill="#FF0000"><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg></span>
-    <span class="rtxt"><div class="rtitle">YouTube</div><div class="rsub">+770 mil inscritos</div></span>
-    <span class="chev">→</span>
-  </a>
-  <a class="row" href="https://tiktok.com/@manualdorecemnascido" target="_blank" rel="noopener">
-    <span class="ico"><svg viewBox="0 0 24 24" fill="#010101"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.01-2.82h-3.09v12.4a2.43 2.43 0 1 1-2.43-2.43c.25 0 .5.04.74.12V9.96a5.54 5.54 0 0 0-.74-.05 5.52 5.52 0 1 0 5.52 5.52V9.13a7.34 7.34 0 0 0 4.3 1.38V7.42a4.28 4.28 0 0 1-3.29-1.6z"/></svg></span>
-    <span class="rtxt"><div class="rtitle">TikTok</div><div class="rsub">@manualdorecemnascido · +630 mil</div></span>
-    <span class="chev">→</span>
-  </a>
+  <section class="panel p-redes">
+    <div class="phead"><span class="pic"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.9-10-9.5C.5 8 2 4.5 5.3 4.5c2 0 3.3 1.2 4.2 2.5.9-1.3 2.2-2.5 4.2-2.5C17 4.5 18.5 8 17 11.5 14.5 16.1 12 21 12 21z"/></svg></span><span class="pt">Redes sociais</span></div>
+    <a class="row" href="https://instagram.com/manualdorecemnascido" target="_blank" rel="noopener">
+      <span class="ico" style="background:#FCE7F0"><svg viewBox="0 0 24 24" fill="#C13584"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.43-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2zm0 3.07A4.93 4.93 0 1 1 12 16.93 4.93 4.93 0 0 1 12 7.07zm0 1.8a3.13 3.13 0 1 0 0 6.26 3.13 3.13 0 0 0 0-6.26zm5.15-.95a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0z"/></svg></span>
+      <span class="rtxt"><div class="rtitle">Instagram</div><div class="rsub">Dicas diárias no feed e nos stories · @manualdorecemnascido</div></span>
+      <span class="chev">→</span>
+    </a>
+    <a class="row" href="https://youtube.com/manualdorecemnascido" target="_blank" rel="noopener">
+      <span class="ico" style="background:#FDE3E3"><svg viewBox="0 0 24 24" fill="#FF0000"><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg></span>
+      <span class="rtxt"><div class="rtitle">YouTube</div><div class="rsub">Aulas e vídeos completos toda semana</div></span>
+      <span class="chev">→</span>
+    </a>
+    <a class="row" href="https://tiktok.com/@manualdorecemnascido" target="_blank" rel="noopener">
+      <span class="ico" style="background:#E9E9EA"><svg viewBox="0 0 24 24" fill="#010101"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.01-2.82h-3.09v12.4a2.43 2.43 0 1 1-2.43-2.43c.25 0 .5.04.74.12V9.96a5.54 5.54 0 0 0-.74-.05 5.52 5.52 0 1 0 5.52 5.52V9.13a7.34 7.34 0 0 0 4.3 1.38V7.42a4.28 4.28 0 0 1-3.29-1.6z"/></svg></span>
+      <span class="rtxt"><div class="rtitle">TikTok</div><div class="rsub">Vídeos rápidos que viralizam todo dia</div></span>
+      <span class="chev">→</span>
+    </a>
+  </section>
 
   <!-- PUBLICIDADE & PARCERIAS -->
-  <div class="sect"><span>Publicidade &amp; parcerias</span></div>
-  <a class="row" href="mailto:assessoria@manualdorecemnascido.com.br">
-    <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#C08863" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
-    <span class="rtxt"><div class="rtitle">Fale com a assessoria</div><div class="rsub">assessoria@manualdorecemnascido.com.br</div></span>
-    <span class="chev">→</span>
-  </a>
+  <section class="panel p-parcerias">
+    <div class="phead"><span class="pic"><svg viewBox="0 0 24 24"><path d="M8 11 3 8V5l5 3m0 3 5-3 6 3.5v3l-6-3.5-5 3m0-6v6"/><path d="M8 11v6l5 3v-6"/></svg></span><span class="pt">Publicidade &amp; parcerias</span></div>
+    <a class="row" href="mailto:assessoria@manualdorecemnascido.com.br">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#C08863" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+      <span class="rtxt"><div class="rtitle">Fale com a assessoria</div><div class="rsub">assessoria@manualdorecemnascido.com.br</div></span>
+      <span class="chev">→</span>
+    </a>
+  </section>
 
   <!-- FOOTER -->
   <footer>
@@ -230,7 +266,9 @@ const PRODUCTS = {
   pega:{t:"Guia da Pega",p:"Curso rápido pra amamentar sem dor e com o bebê mamando bem.",g:"Amamentação",u:"https://tdapocket.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_content=chatbot"},
   cons_sono:{t:"Consulta de Sono",p:"Atendimento individual com a Day pra resolver o sono do bebê.",g:"Consulta individual",u:"https://db.manualdorecemnascido.com.br/consulta-do-sono-com-day?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_content=chatbot"},
   cons_amam:{t:"Consulta de Amamentação",p:"Atendimento individual pra parar a dor e ver o bebê mamando bem.",g:"Consulta individual",u:"https://td.manualdorecemnascido.com.br/consulta-de-amamentacao?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_content=chatbot"},
-  manual:{t:"Manual do Recém-Nascido",p:"O curso completo: amamentação, sono e cuidados do zero aos primeiros meses.",g:"Curso completo",u:"https://mr.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_content=chatbot"}
+  manual:{t:"Manual do Recém-Nascido",p:"O curso completo: amamentação, sono e cuidados do zero aos primeiros meses.",g:"Curso completo",u:"https://mr.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_content=chatbot"},
+  metodo_sono:{t:"Método de Sono Dream Baby",p:"Curso completo de sono + acompanhamento individual no seu WhatsApp.",g:"Curso + acompanhamento",u:"https://db.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_content=chatbot"},
+  tecnica_anjos:{t:"Técnica dos Anjos na Amamentação",p:"Curso completo de amamentação + acompanhamento individual no seu WhatsApp.",g:"Curso + acompanhamento",u:"https://td.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_content=chatbot"}
 };
 
 const ov=document.getElementById('ov'),dw=document.getElementById('dw'),db=document.getElementById('dbody');
@@ -253,10 +291,10 @@ function guide(){
 }
 function flow(t){
   document.querySelectorAll('.chips').forEach(c=>c.remove());
-  if(t==='sono'){bubble('Entendo demais. O primeiro passo é descobrir <b>o perfil de sono</b> do seu bebê:');rec(['sono_pocket']);bubble('Quer a Day olhando o seu caso de perto? A consulta resolve em poucos dias:');rec(['cons_sono']);}
-  else if(t==='amam'){bubble('Amamentar não precisa doer. Comece pelo <b>Guia da Pega</b>:');rec(['pega']);bubble('E se quiser um olhar individual:');rec(['cons_amam']);}
+  if(t==='sono'){bubble('Entendo demais. Comece descobrindo <b>o perfil de sono</b> do seu bebê:');rec(['sono_pocket']);bubble('Pra ir a fundo, o curso completo com acompanhamento:');rec(['metodo_sono']);bubble('E se quiser a Day no seu caso agora, a consulta:');rec(['cons_sono']);}
+  else if(t==='amam'){bubble('Amamentar não precisa doer. Comece pelo <b>Guia da Pega</b>:');rec(['pega']);bubble('Pra dominar de vez, com acompanhamento individual:');rec(['tecnica_anjos']);bubble('E se quiser um olhar individual agora:');rec(['cons_amam']);}
   else if(t==='gest'){bubble('Se preparar antes muda tudo. O <b>Manual do Recém-Nascido</b> te deixa pronta desde o 1º dia:');rec(['manual']);}
-  else{bubble('Perfeito! Aqui está tudo o que a Day preparou pra você:');rec(['sono_pocket','pega','cons_sono','cons_amam','manual']);}
+  else{bubble('Perfeito! Aqui está tudo o que a Day preparou pra você:');rec(['sono_pocket','pega','cons_sono','cons_amam','manual','metodo_sono','tecnica_anjos']);}
   const w=document.createElement('div');w.className='chips';const b=document.createElement('button');b.className='chip';b.textContent='↩  Recomeçar';b.onclick=guide;w.appendChild(b);db.appendChild(w);
   const n=document.createElement('div');n.className='note';n.textContent='Assistente inteligente (GPT Maker) em ativação.';db.appendChild(n);
   db.scrollTop=db.scrollHeight;
