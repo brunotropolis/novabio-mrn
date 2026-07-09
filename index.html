@@ -316,6 +316,25 @@
       }
     }
   }
+
+  // Esconde o balão flutuante do GPT Maker no canto (a Carol abre o chat pelo CTA do topo).
+  (function(){
+    function hideFloat(){
+      var all=document.querySelectorAll('body *');
+      for(var i=0;i<all.length;i++){
+        var el=all[i], s=getComputedStyle(el);
+        if(s.position!=='fixed' || s.display==='none') continue;
+        var r=el.getBoundingClientRect();
+        if(r.width>=40 && r.width<=90 && r.height>=40 && r.height<=90 &&
+           r.right>window.innerWidth-150 && r.bottom>window.innerHeight-150){
+          el.style.setProperty('display','none','important');
+        }
+      }
+    }
+    var n=0, iv=setInterval(function(){ hideFloat(); if(++n>60) clearInterval(iv); }, 400);
+    window.addEventListener('load', hideFloat);
+    if(window.MutationObserver){ try{ new MutationObserver(hideFloat).observe(document.body,{childList:true,subtree:true}); }catch(e){} }
+  })();
 </script>
 </body>
 </html>
