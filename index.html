@@ -119,9 +119,12 @@
   .phead .psub{display:inline-flex;align-items:center;gap:6px;font-size:.6rem;letter-spacing:1.4px;text-transform:uppercase;color:rgba(255,255,255,.72);font-weight:500}
   .phead .psub svg{width:14px;height:14px;flex-shrink:0}
   .phead .pn{margin-left:auto;font-size:.63rem;color:rgba(255,255,255,.6);letter-spacing:.5px;white-space:nowrap;padding-top:5px}
-  .phead .wpill{display:inline-flex;align-items:center;gap:6px;font-size:.6rem;letter-spacing:1.2px;text-transform:uppercase;font-weight:600;color:#BEF0D2;background:rgba(37,211,102,.16);border:1px solid rgba(37,211,102,.42);border-radius:20px;padding:4px 10px 4px 8px}
+  .phead .wpill{display:inline-flex;align-items:center;gap:6px;font-size:.6rem;letter-spacing:1.1px;text-transform:uppercase;font-weight:700;color:#fff;background:#1EB955;border:none;border-radius:20px;padding:5px 11px 5px 9px;box-shadow:0 5px 12px -4px rgba(30,185,85,.6)}
   .phead .wpill svg{width:14px;height:14px;flex-shrink:0}
   .phead .pdesc{font-size:.6rem;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,.62);font-weight:500}
+  .dchev{margin-left:auto;width:31px;height:31px;border-radius:50%;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .16s ease}
+  .dchev svg{width:15px;height:15px;stroke:#fff;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+  .assist:hover .dchev,.quizcard:hover .dchev{transform:translateX(3px)}
 
   .p-rapidos  {--pbg:linear-gradient(150deg,#2F5A55,#254743);--pbd:#213f3b;--acc:#8FD8C4;--acc-dk:#2f7568;--halo:#8FD8C4}
   .p-consultas{--pbg:linear-gradient(150deg,#7C3D5A,#5A2B42);--pbd:#4d2537;--acc:#F0A9C2;--acc-dk:#b05677;--halo:#F0A9C2}
@@ -198,10 +201,10 @@
   <button class="assist" onclick="openAssistant()">
     <span class="orb"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
     <span class="t">
-      <strong>Conte pra Carol o que você está passando</strong>
+      <strong>Conte para Carol qual dificuldade você está passando</strong>
       <span class="badge">Carol é nossa assistente digital</span>
     </span>
-    <span class="chev arrow-txt">→</span>
+    <span class="dchev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
   </button>
 
   <!-- QUIZ (chamada separada) -->
@@ -212,8 +215,9 @@
     </span>
     <span class="qtxt">
       <div class="qtitle">Descubra o perfil de sono do seu bebê</div>
-      <div class="qsub">Faça o quiz gratuito <span class="arrow">→</span></div>
+      <div class="qsub">Faça o quiz gratuito</div>
     </span>
+    <span class="dchev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
   </a>
 
   <!-- CURSOS RÁPIDOS -->
@@ -232,7 +236,7 @@
       <span class="pic"><svg viewBox="0 0 24 24"><path d="M15 10l5-3v10l-5-3v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/></svg></span>
       <div class="ptwrap">
         <span class="pt">Consulta individual por videochamada</span>
-        <span class="wpill"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.1-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 5 5 0 0 0 1 2.6 11 11 0 0 0 4.3 3.8c1.6.7 1.9.6 2.3.5a2.3 2.3 0 0 0 1.5-1.1c.2-.4.2-.8.1-.9z"/></svg> Acompanhamento no Whats</span>
+        <span class="wpill"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.1-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 5 5 0 0 0 1 2.6 11 11 0 0 0 4.3 3.8c1.6.7 1.9.6 2.3.5a2.3 2.3 0 0 0 1.5-1.1c.2-.4.2-.8.1-.9z"/></svg> Acompanhamento no Whats com a equipe</span>
       </div>
     </div>
     <a class="row" href="https://db.manualdorecemnascido.com.br/consulta-do-sono-com-day?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat">
@@ -253,7 +257,7 @@
       <span class="pic"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h6v16H6a2 2 0 0 0-2 2V5z"/><path d="M20 5a2 2 0 0 0-2-2h-6v16h6a2 2 0 0 1 2 2V5z"/></svg></span>
       <div class="ptwrap">
         <span class="pt">Cursos completos</span>
-        <span class="wpill"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.1-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 5 5 0 0 0 1 2.6 11 11 0 0 0 4.3 3.8c1.6.7 1.9.6 2.3.5a2.3 2.3 0 0 0 1.5-1.1c.2-.4.2-.8.1-.9z"/></svg> Acompanhamento individual no Whats</span>
+        <span class="wpill"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.1-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 5 5 0 0 0 1 2.6 11 11 0 0 0 4.3 3.8c1.6.7 1.9.6 2.3.5a2.3 2.3 0 0 0 1.5-1.1c.2-.4.2-.8.1-.9z"/></svg> Acompanhamento no Whats com a equipe</span>
       </div>
     </div>
     <a class="row" href="https://mr.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat">
@@ -268,7 +272,7 @@
     </a>
     <a class="row" href="https://td.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=novo-seguidores&utm_id=clicou-link&utm_content=manychat&src=organico%7Cnovo-seguidores%7Cclicou-link%7Cmanychat">
       <span class="tw"><img class="thumb" src="assets/day/tecnica-anjos.jpg" alt=""><span class="vec"><svg viewBox="0 0 24 24"><path d="M12 20S3.8 15 3.8 9.2A3.9 3.9 0 0 1 12 6.8a3.9 3.9 0 0 1 8.2 2.4C20.2 15 12 20 12 20z"/></svg></span></span>
-      <span class="rtxt"><span class="tag">Amamentação</span><div class="rtitle">Técnica dos Anjos na Amamentação</div><div class="rsub">Tudo sobre amamentação, do começo ao fim</div></span>
+      <span class="rtxt"><span class="tag">Amamentação</span><div class="rtitle">Técnica Dos Anjos na Amamentação</div><div class="rsub">Tudo sobre amamentação, do começo ao fim</div></span>
       <span class="chev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
     </a>
   </section>
