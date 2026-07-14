@@ -378,19 +378,31 @@
   (function(){
     var NET={fb:'facebook',ig:'instagram',yt:'youtube',tk:'tiktok'};
     var sub=(location.hostname.split('.')[0]||'').toLowerCase();
-    var net=NET[sub];
+    var net=NET[sub], med=null;
     try{
       var qs=new URLSearchParams(location.search);
       var r=(qs.get('rede')||'').toLowerCase();
       if(NET[r]) net=NET[r];
       if(qs.get('utm_source')) net=qs.get('utm_source');
+      // utm_medium customizado: ?utm_medium=... direto, ou ?fluxo=boas-vindas -> fluxo-boas-vindas
+      if(qs.get('utm_medium')) med=qs.get('utm_medium');
+      else if(qs.get('fluxo')) med='fluxo-'+qs.get('fluxo').toLowerCase();
     }catch(e){}
     if(!net) net='instagram';
     var HOSTS=['perfis.','tdapocket.','db.','td.','mr.'];
     document.querySelectorAll('.wrap a[href^="http"]').forEach(function(a){
       var h; try{ h=new URL(a.href).hostname; }catch(e){ return; }
       if(!HOSTS.some(function(p){ return h.indexOf(p)===0; })) return;
-      try{ var u=new URL(a.href); u.searchParams.set('utm_source', net); a.href=u.toString(); }catch(e){}
+      try{
+        var u=new URL(a.href);
+        u.searchParams.set('utm_source', net);
+        if(med){
+          u.searchParams.set('utm_medium', med);
+          var src=u.searchParams.get('src');
+          if(src){ var p=src.split('|'); if(p.length>=2){ p[1]=med; u.searchParams.set('src', p.join('|')); } }
+        }
+        a.href=u.toString();
+      }catch(e){}
     });
   })();
 </script>
