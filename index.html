@@ -71,22 +71,20 @@
   .profile .role{font-size:.7rem;letter-spacing:2.6px;text-transform:uppercase;color:#B05C80;margin-top:9px;font-weight:600}
   .profile .tag{font-size:.94rem;color:#7A5568;max-width:400px;margin:13px auto 0}
 
-  /* ---------- ASSISTENTE / CAROL (plum) ---------- */
-  .assist{
-    display:flex;align-items:center;gap:14px;width:100%;margin:24px 0 8px;cursor:pointer;
-    background:linear-gradient(135deg,#6E4763,#472F49);color:#FBF3F7;
-    border:none;border-radius:20px;padding:15px 16px;box-shadow:0 16px 30px -16px rgba(80,40,70,.55);
-    transition:transform .18s ease;text-align:left;font-family:'Poppins';
+  /* ---------- WHATSAPP (atendimento) ---------- */
+  .wacta{
+    display:flex;align-items:center;gap:14px;width:100%;margin:24px 0 8px;text-decoration:none;
+    background:linear-gradient(135deg,#25D366,#12A65A 55%,#0C8A66);color:#fff;
+    border-radius:20px;padding:15px 16px;box-shadow:0 16px 30px -14px rgba(18,140,90,.5);
+    transition:transform .18s ease;
   }
-  .assist:hover{transform:translateY(-2px)}
-  .assist .orb{flex-shrink:0;width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 32% 28%, #F3CFDD, #C97CA0);display:flex;align-items:center;justify-content:center;position:relative}
-  .assist .orb::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid rgba(243,207,221,.55);animation:pulse 2.6s ease-out infinite}
-  @keyframes pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.55);opacity:0}}
-  .assist .orb svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:1.6}
-  .assist .t{flex:1;min-width:0}
-  .assist .t strong{display:block;font-family:'Fraunces',serif;font-weight:500;font-size:.92rem;line-height:1.24}
-  .assist .t .badge{display:inline-block;margin-top:7px;white-space:nowrap;font-size:.56rem;letter-spacing:.6px;text-transform:uppercase;font-weight:600;color:#F3CFDD;background:rgba(243,207,221,.14);border:1px solid rgba(243,207,221,.3);border-radius:20px;padding:3px 9px}
-  .assist .chev{margin-left:auto;opacity:.85;font-size:1.2rem;flex-shrink:0}
+  .wacta:hover{transform:translateY(-2px)}
+  .wacta:hover .dchev{transform:translateX(3px)}
+  .wacta .walogo{flex-shrink:0;width:46px;height:46px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px -6px rgba(0,0,0,.3)}
+  .wacta .walogo svg{width:30px;height:30px}
+  .wacta .t{flex:1;min-width:0}
+  .wacta .t strong{display:block;font-family:'Fraunces',serif;font-weight:500;font-size:1.02rem;line-height:1.22}
+  .wacta .t span{display:block;font-size:.8rem;color:rgba(255,255,255,.92);margin-top:4px;line-height:1.3}
 
   /* ---------- QUIZ (chamada separada, tema noite) ---------- */
   .quizcard{
@@ -188,7 +186,7 @@
   footer .cp{font-size:.72rem;color:rgba(87,49,81,.7)}
 
   @media (prefers-reduced-motion: reduce){
-    .hero .ph,.hero .ring,.hero .glow,.hero .dec,.quizcard::before,.assist .orb::after{animation:none!important}
+    .hero .ph,.hero .ring,.hero .glow,.hero .dec,.quizcard::before{animation:none!important}
   }
 </style>
 </head>
@@ -212,15 +210,15 @@
     <p class="tag">Consultora de sono, amamentação e cuidados com o bebê. Escolha por onde começar 💛</p>
   </header>
 
-  <!-- ASSISTENTE / CAROL -->
-  <button class="assist" onclick="openAssistant()">
-    <span class="orb"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
+  <!-- ATENDIMENTO WHATSAPP -->
+  <a class="wacta" href="https://api.whatsapp.com/send?phone=554184144810&text=Oi,%20eu%20estava%20no%20Instagram%20e%20quero%20saber%20mais%20sobre%20os%20Cursos%20%26%20Consultas%20da%20Day.." target="_blank" rel="noopener">
+    <span class="walogo"><svg viewBox="0 0 24 24" fill="#25D366"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.1-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 5 5 0 0 0 1 2.6 11 11 0 0 0 4.3 3.8c1.6.7 1.9.6 2.3.5a2.3 2.3 0 0 0 1.5-1.1c.2-.4.2-.8.1-.9z"/></svg></span>
     <span class="t">
-      <strong>Conte para Carol qual dificuldade você está passando</strong>
-      <span class="badge">Carol é nossa assistente digital</span>
+      <strong>Fale com a gente no WhatsApp</strong>
+      <span>Tire suas dúvidas sobre os cursos e consultas</span>
     </span>
     <span class="dchev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
-  </button>
+  </a>
 
   <!-- QUIZ (chamada separada) -->
   <a class="quizcard" href="https://perfis.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=publico-q&utm_id=clicou-link&utm_content=link-da-bio&src=organico%7Cpublico-q%7Cclicou-link%7Clink-da-bio">
@@ -337,41 +335,7 @@
 
 </div>
 
-<!-- GPT MAKER — balão nativo do agente Carol (canal LINK DA BIO) -->
-<script async src="https://app.gptmaker.ai/widget/3F55E9F73C0CA337399BFA1B016FD534/float.js"></script>
 <script>
-  function openAssistant(){
-    if(window.GPT_CHAT_IFRAME_FUNCTIONS && window.GPT_CHAT_IFRAME_FUNCTIONS.toogleChat){
-      try{ window.GPT_CHAT_IFRAME_FUNCTIONS.toogleChat(true); return; }catch(e){}
-    }
-    var nodes=document.querySelectorAll('body > div');
-    for(var i=nodes.length-1;i>=0;i--){
-      var s=getComputedStyle(nodes[i]);
-      if(s.position==='fixed' && parseInt(s.right)<80 && parseInt(s.bottom)<80){
-        var b=nodes[i].querySelector('button'); if(b){ try{ b.click(); return; }catch(e){} }
-      }
-    }
-  }
-
-  // Esconde o balão flutuante do GPT Maker no canto (a Carol abre o chat pelo CTA do topo).
-  (function(){
-    function hideFloat(){
-      var all=document.querySelectorAll('body *');
-      for(var i=0;i<all.length;i++){
-        var el=all[i], s=getComputedStyle(el);
-        if(s.position!=='fixed' || s.display==='none') continue;
-        var r=el.getBoundingClientRect();
-        if(r.width>=40 && r.width<=90 && r.height>=40 && r.height<=90 &&
-           r.right>window.innerWidth-150 && r.bottom>window.innerHeight-150){
-          el.style.setProperty('display','none','important');
-        }
-      }
-    }
-    var n=0, iv=setInterval(function(){ hideFloat(); if(++n>60) clearInterval(iv); }, 400);
-    window.addEventListener('load', hideFloat);
-    if(window.MutationObserver){ try{ new MutationObserver(hideFloat).observe(document.body,{childList:true,subtree:true}); }catch(e){} }
-  })();
-
   // Tracking por rede social: define utm_source nos links de curso conforme o subdominio
   // (fb/ig/yt/tk) OU ?rede=fb|ig|yt|tk OU ?utm_source=... — default instagram.
   // Só afeta: quiz (perfis), guia (tdapocket), consultas + completos (db/td/mr).
