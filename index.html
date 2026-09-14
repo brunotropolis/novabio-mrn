@@ -357,5 +357,55 @@
     });
   })();
 </script>
+
+<script>
+  // Coletor de eventos do link-da-bio -> Worker /__ev -> Supabase (dash em conteudo.manualdorecemnascido.com.br).
+  // Registra acesso, clique (com categoria/destino) e dead click (toque que nao cai em link).
+  (function(){
+    var NET={fb:'facebook',ig:'instagram',yt:'youtube',tk:'tiktok'};
+    var sub=(location.hostname.split('.')[0]||'').toLowerCase();
+    var net=NET[sub]||'';
+    try{
+      var qs=new URLSearchParams(location.search);
+      var r=(qs.get('rede')||'').toLowerCase();
+      if(NET[r]) net=NET[r];
+      if(qs.get('utm_source')) net=qs.get('utm_source');
+    }catch(e){}
+    var ua=navigator.userAgent||'';
+    var device=/Mobi|Android|iPhone|iPod/i.test(ua)?'mobile':(/iPad|Tablet/i.test(ua)?'tablet':'desktop');
+    var os=/iPhone|iPad|iPod/i.test(ua)?'iOS':/Android/i.test(ua)?'Android':/Windows/i.test(ua)?'Windows':(/Mac OS X|Macintosh/i.test(ua)?'macOS':(/Linux/i.test(ua)?'Linux':'outro'));
+    var sid=''; try{ sid=sessionStorage.getItem('bio_sid'); if(!sid){ sid=Date.now().toString(36)+Math.random().toString(36).slice(2,8); sessionStorage.setItem('bio_sid',sid);} }catch(e){}
+    function ev(o){
+      o.sid=sid; o.rede=net; o.device=device; o.os=os; o.page='bio'; o.ref=document.referrer||'';
+      try{ navigator.sendBeacon('/__ev', new Blob([JSON.stringify(o)],{type:'application/json'})); }catch(e){}
+    }
+    ev({type:'pageview'});
+    document.addEventListener('click', function(e){
+      var a=e.target.closest('a[href]');
+      if(a){
+        var cat='perfil';
+        if(a.classList.contains('wafloat')) cat='whatsapp';
+        else{
+          var c=a.closest('details.cat');
+          if(c){ cat=c.classList.contains('p-gestantes')?'gestante':c.classList.contains('p-amam')?'amamentacao':c.classList.contains('p-sono')?'sono':c.classList.contains('p-ofertas')?'ofertas':'outro'; }
+          else if(a.closest('.simple-parc')) cat='parceria';
+          else if(a.closest('footer')) cat='rodape';
+        }
+        var label=''; var t=a.querySelector('.rtitle,.stitle');
+        if(t) label=t.textContent.trim();
+        else if(a.getAttribute('aria-label')) label=a.getAttribute('aria-label');
+        else label=(a.textContent||'').trim().slice(0,80);
+        var dest=''; try{ dest=new URL(a.href).hostname||(''+a.href).split(':')[0]; }catch(_){ dest=(''+a.href).slice(0,80); }
+        ev({type:'click', label:label, category:cat, dest:dest});
+        return;
+      }
+      if(!e.target.closest('summary')){
+        var el=e.target, tag=(el.tagName||'').toLowerCase();
+        var cn=el.className; cn=(cn&&cn.baseVal!==undefined)?cn.baseVal:(''+(cn||''));
+        ev({type:'deadclick', dead:(tag+(cn?('.'+cn.split(' ')[0]):'')).slice(0,120)});
+      }
+    }, true);
+  })();
+</script>
 </body>
 </html>
