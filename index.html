@@ -113,6 +113,7 @@
   .p-amam     {--pbg:linear-gradient(150deg,#7C3D5A,#5A2B42);--pbd:#4d2537;--acc:#F0A9C2;--acc-dk:#b05677;--halo:#F0A9C2}
   .p-sono     {--pbg:linear-gradient(150deg,#4A3A66,#332948);--pbd:#2c2340;--acc:#B9A6E6;--acc-dk:#6f5ea0;--halo:#B9A6E6}
   .p-ofertas  {--pbg:linear-gradient(150deg,#6E9070,#47654B);--pbd:#3c5540;--acc:#CFE7C8;--acc-dk:#4E7B57;--halo:#CFE7C8}
+  .p-ofertas .pt{white-space:nowrap;font-size:clamp(.8rem,3.8vw,1.12rem)}
 
   /* ---------- ROW (botão claro) ---------- */
   .row{
@@ -143,6 +144,7 @@
 
   .row .rtxt{flex:1;min-width:0}
   .row .rtitle{font-family:'Fraunces',serif;font-weight:500;font-size:1.06rem;line-height:1.18;color:var(--ink)}
+  .row .rtitle.oneline{white-space:nowrap;font-size:clamp(.8rem,3.6vw,1.06rem)}
   .row .rsub{font-size:.79rem;color:var(--ink-soft);margin-top:3px;line-height:1.35;overflow-wrap:anywhere}
   .row .chev{width:31px;height:31px;border-radius:50%;background:var(--halo);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .16s ease}
   .row .chev svg{width:15px;height:15px;stroke:var(--acc-dk,#b58);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
@@ -282,19 +284,19 @@
     <summary>
       <div class="phead">
         <span class="pic"><img src="assets/day/th-ofertas.jpg" alt=""></span>
-        <div class="ptwrap"><span class="pt">Descontos de Fraldas &amp; produtos</span><span class="pdesc">Localizamos as melhores ofertas de produtos pra você</span></div>
+        <div class="ptwrap"><span class="pt">Ofertas Fraldas &amp; Produtos</span><span class="pdesc">Localizamos as melhores ofertas de produtos pra você</span></div>
         <span class="catchev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
       </div>
     </summary>
     <div class="catbody">
       <a class="row" href="https://fraldas.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=publico-q&utm_id=clicou-link&utm_content=link-da-bio&src=organico%7Cpublico-q%7Cclicou-link%7Clink-da-bio">
         <span class="tw"><img class="thumb" src="assets/day/fraldas-day.jpg" alt=""><span class="vec"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span></span>
-        <span class="rtxt"><span class="tag">Site de busca</span><div class="rtitle">Busca Fraldas</div><div class="rsub">Acesso gratuito às melhores ofertas de fraldas, atualizado diariamente num único lugar</div></span>
+        <span class="rtxt"><span class="tag">Site de busca</span><div class="rtitle">Busca Fraldas</div><div class="rsub">As melhores ofertas de fraldas, <b>atualizado diariamente</b> em um só lugar</div></span>
         <span class="chev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
       </a>
       <a class="row" href="https://asofertasmaternas.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=publico-q&utm_id=clicou-link&utm_content=link-da-bio&src=organico%7Cpublico-q%7Cclicou-link%7Clink-da-bio">
-        <span class="tw"><img class="thumb" src="assets/day/ofertas-whats-day.jpg" alt=""><span class="vec" style="background:#25D366;border-color:#fff"><svg viewBox="0 0 24 24" fill="#fff" stroke="none"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3zm5 12.3c-.2.6-1.2 1.1-1.7 1.2-.4.1-1 .1-2.7-.6-2.3-1-3.8-3.3-3.9-3.5-.1-.2-1-1.3-1-2.4s.6-1.7.8-2c.2-.2.4-.3.6-.3h.4c.1 0 .3 0 .5.4.2.5.7 1.6.7 1.7.1.1.1.3 0 .4l-.3.4c-.1.2-.3.3-.1.5.1.2.6 1 1.3 1.6.9.8 1.6 1 1.8 1.1.2.1.3.1.5-.1.1-.2.5-.6.6-.8.2-.2.3-.2.5-.1l1.6.8c.2.1.4.2.4.3.1.1.1.5-.1 1z"/></svg></span></span>
-        <span class="rtxt"><span class="tag wtag"><svg viewBox="0 0 24 24" fill="#1EB955"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.1-1.3A10 10 0 1 0 12 2z"/></svg>Grupo no WhatsApp</span><div class="rtitle">As Ofertas Maternas</div><div class="rsub">O melhor grupo de ofertas, descontos e cupons exclusivos de produtos pro bebê</div></span>
+        <span class="tw"><img class="thumb" src="assets/day/ofertas-whats-day.jpg" alt=""><span class="vec"><svg viewBox="0 0 24 24" stroke="none"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.1-1.3A10 10 0 1 0 12 2z"/><path fill="#fff" d="M16.4 14.3c-.2-.1-1.3-.7-1.5-.75-.2-.08-.35-.1-.5.1l-.65.83c-.12.15-.24.17-.44.06a5.9 5.9 0 0 1-2.94-2.57c-.1-.2 0-.3.09-.44l.37-.46c.09-.13.09-.24.03-.4l-.65-1.55c-.17-.4-.35-.35-.48-.35h-.44a.86.86 0 0 0-.62.29 2.6 2.6 0 0 0-.8 1.92 4.5 4.5 0 0 0 .95 2.38 10 10 0 0 0 3.9 3.45c1.45.63 1.7.55 2.02.5a2.1 2.1 0 0 0 1.38-.98c.17-.35.17-.65.12-.72z"/></svg></span></span>
+        <span class="rtxt"><span class="tag wtag"><svg viewBox="0 0 24 24" fill="#1EB955"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.1-1.3A10 10 0 1 0 12 2z"/></svg>Grupo no WhatsApp</span><div class="rtitle oneline">As Ofertas Maternas</div><div class="rsub">O melhor grupo de ofertas, descontos e cupons exclusivos de produtos pro bebê</div></span>
         <span class="chev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
       </a>
     </div>
