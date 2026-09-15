@@ -190,6 +190,11 @@
   .footlogo{width:44px;height:44px;border-radius:50%;object-fit:cover;margin:0 auto 12px;display:block;opacity:.92;border:2px solid rgba(255,255,255,.8)}
   footer .cp{font-size:.72rem;color:rgba(87,49,81,.7)}
 
+  @media (max-width:420px){
+    .quizcard .tw{width:60px;height:60px}
+    .quizcard .tw .thumb{width:60px;height:60px}
+    .quizcard .tw::before{inset:-3px}
+  }
   @media (prefers-reduced-motion: reduce){
     .hero .ph,.hero .ring,.hero .glow,.hero .dec,.wafloat::after{animation:none!important}
   }
@@ -224,7 +229,7 @@
       <span class="vec"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span>
     </span>
     <span class="qtxt">
-      <div class="qtitle">Descubra o perfil de <span style="color:#F0D6A0">sono do seu bebê</span></div>
+      <div class="qtitle">Descubra o perfil de <span style="color:#F0D6A0;white-space:nowrap">sono do seu bebê</span></div>
       <div class="qsub">Faça o quiz gratuito <span class="arrow">›</span></div>
     </span>
   </a>
