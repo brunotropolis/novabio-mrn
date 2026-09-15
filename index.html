@@ -412,13 +412,14 @@
       if(a){
         var cat='perfil';
         if(a.classList.contains('wafloat')) cat='whatsapp';
+        else if(a.closest('.quizcard')) cat='quiz';
         else{
           var c=a.closest('details.cat');
           if(c){ cat=c.classList.contains('p-gestantes')?'gestante':c.classList.contains('p-amam')?'amamentacao':c.classList.contains('p-sono')?'sono':c.classList.contains('p-ofertas')?'ofertas':'outro'; }
           else if(a.closest('.simple-parc')) cat='parceria';
           else if(a.closest('footer')) cat='rodape';
         }
-        var label=''; var t=a.querySelector('.rtitle,.stitle');
+        var label=''; var t=a.querySelector('.rtitle,.stitle,.qtitle');
         if(t) label=t.textContent.trim();
         else if(a.getAttribute('aria-label')) label=a.getAttribute('aria-label');
         else label=(a.textContent||'').trim().slice(0,80);
