@@ -110,8 +110,13 @@
   .special .skick{display:inline-block;font-size:.57rem;letter-spacing:1.4px;text-transform:uppercase;font-weight:700;margin-bottom:5px;padding:3px 9px;border-radius:20px;background:rgba(255,255,255,.22)}
   .special .stitle{font-family:'Fraunces',serif;font-weight:500;font-size:1.1rem;line-height:1.16}
   .special .ssub{font-size:.8rem;margin-top:4px;color:rgba(255,255,255,.92);line-height:1.32}
+  .special .dchev{width:31px;height:31px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .16s ease}
+  .special .dchev svg{width:16px;height:16px}
   .special:hover .dchev{transform:translateX(3px)}
   .sp-poltrona{background:linear-gradient(135deg,#BC8189,#8C5560)}
+  .sp-aula{background:linear-gradient(135deg,#2F7C82,#153E4A);margin-top:12px}
+  .sp-aula[hidden]{display:none}
+  .sp-aula .stile img{object-fit:cover}
   .special .scoupon{display:inline-flex;align-items:center;gap:5px;margin-top:8px;font-size:.68rem;font-weight:700;letter-spacing:.3px;color:#8C4A54;background:#fff;border-radius:9px;padding:4px 10px;box-shadow:0 5px 12px -5px rgba(0,0,0,.35)}
 
   /* ---------- CATEGORIA (accordion / box escuro) ---------- */
@@ -234,6 +239,17 @@
     </span>
   </a>
 
+  <!-- AULA AUTONOMIA DE SONO (so aparece pra quem vem do TikTok/YouTube) -->
+  <a class="special sp-aula" hidden href="https://clubedosono.manualdorecemnascido.com.br/?utm_content=link-da-bio">
+    <span class="stile"><img src="assets/day/th-sono-2.jpg" alt=""></span>
+    <span class="stxt">
+      <span class="skick">Aula gratuita</span>
+      <div class="stitle">Aula de Autonomia de Sono</div>
+      <div class="ssub">Terça-feira, vou disponibilizar de forma gratuita uma aula sobre autonomia de sono que dei para minhas alunas!</div>
+    </span>
+    <span class="dchev"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+  </a>
+
   <!-- GESTANTE -->
   <details class="cat p-gestantes">
     <summary>
@@ -248,16 +264,6 @@
         <span class="tw"><img class="thumb" src="assets/day/manual.jpg" alt=""><span class="vec"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h6v16H6a2 2 0 0 0-2 2z"/><path d="M20 5a2 2 0 0 0-2-2h-6v16h6a2 2 0 0 1 2 2z"/></svg></span></span>
         <span class="rtxt"><span class="tag">Tudo em um só lugar</span><div class="rtitle">Manual do Recém-Nascido</div><div class="rsub">Amamentação, sono e cuidados do zero, antes e depois do parto</div></span>
         <span class="chev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="special sp-poltrona" style="margin-top:3px" href="https://www.damie.com.br/products/poltrona-reclinavel-com-elevacao-damie-2-0-versao-2026/?utm_source=ig&utm_medium=social&utm_campaign=manualdorecemnascido_influencer">
-        <span class="stile"><img src="assets/poltrona.jpg" alt="Poltrona de Amamentação Damie"></span>
-        <span class="stxt">
-          <span class="skick">Garanta a sua</span>
-          <div class="stitle">Poltrona de Amamentação</div>
-          <div class="ssub">Conforto e apoio na hora de amamentar</div>
-          <span class="scoupon">🎟️ 12% OFF · cupom DAY12</span>
-        </span>
-        <span class="dchev"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </a>
     </div>
   </details>
@@ -371,7 +377,9 @@
       else if(qs.get('fluxo')) med='fluxo-'+qs.get('fluxo').toLowerCase();
     }catch(e){}
     if(!net) net='instagram';
-    var HOSTS=['perfis.','tdapocket.','db.','td.','mr.','fraldas.'];
+    // Aula de Autonomia de Sono: so pra quem chega do TikTok/YouTube
+    if(net==='tiktok'||net==='youtube'){ var aula=document.querySelector('.sp-aula'); if(aula) aula.hidden=false; }
+    var HOSTS=['perfis.','tdapocket.','db.','td.','mr.','fraldas.','clubedosono.'];
     document.querySelectorAll('.wrap a[href^="http"]').forEach(function(a){
       var h; try{ h=new URL(a.href).hostname; }catch(e){ return; }
       if(!HOSTS.some(function(p){ return h.indexOf(p)===0; })) return;
@@ -418,6 +426,7 @@
         var cat='perfil';
         if(a.classList.contains('wafloat')) cat='whatsapp';
         else if(a.closest('.quizcard')) cat='quiz';
+        else if(a.classList.contains('sp-aula')) cat='aula';
         else{
           var c=a.closest('details.cat');
           if(c){ cat=c.classList.contains('p-gestantes')?'gestante':c.classList.contains('p-amam')?'amamentacao':c.classList.contains('p-sono')?'sono':c.classList.contains('p-ofertas')?'ofertas':'outro'; }
