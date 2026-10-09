@@ -118,6 +118,10 @@
   .sp-aula[hidden]{display:none}
   .sp-aula .stile img{object-fit:cover}
   .sp-aula .skick{background:linear-gradient(135deg,#F3D98B,#D9A93F);color:#3B2708;box-shadow:0 4px 10px -4px rgba(0,0,0,.35)}
+  .sp-ebook{background:linear-gradient(135deg,#4A5A9C,#232B5C);margin-top:12px}
+  .sp-ebook[hidden]{display:none}
+  .sp-ebook .stile img{object-fit:cover}
+  .sp-ebook .skick{background:linear-gradient(135deg,#F3D98B,#D9A93F);color:#3B2708;box-shadow:0 4px 10px -4px rgba(0,0,0,.35)}
   .special .scoupon{display:inline-flex;align-items:center;gap:5px;margin-top:8px;font-size:.68rem;font-weight:700;letter-spacing:.3px;color:#8C4A54;background:#fff;border-radius:9px;padding:4px 10px;box-shadow:0 5px 12px -5px rgba(0,0,0,.35)}
 
   /* ---------- CATEGORIA (accordion / box escuro) ---------- */
@@ -251,6 +255,17 @@
     <span class="dchev"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
   </a>
 
+  <!-- EBOOK DE SONO GRATUITO (so aparece pra quem vem do TikTok/YouTube) -->
+  <a class="special sp-ebook" hidden href="https://clubedosono.manualdorecemnascido.com.br/?utm_content=link-da-bio">
+    <span class="stile"><img src="assets/day/th-sono-3.jpg" alt=""></span>
+    <span class="stxt">
+      <span class="skick">Ebook gratuito</span>
+      <div class="stitle">Baixe o ebook de sono gratuito</div>
+      <div class="ssub">Clique no link e veja as instruções de como baixar</div>
+    </span>
+    <span class="dchev"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+  </a>
+
   <!-- GESTANTE -->
   <details class="cat p-gestantes">
     <summary>
@@ -378,8 +393,8 @@
       else if(qs.get('fluxo')) med='fluxo-'+qs.get('fluxo').toLowerCase();
     }catch(e){}
     if(!net) net='instagram';
-    // Aula de Autonomia de Sono: so pra quem chega do TikTok/YouTube
-    if(net==='tiktok'||net==='youtube'){ var aula=document.querySelector('.sp-aula'); if(aula) aula.hidden=false; }
+    // Aula de Autonomia de Sono + Ebook de sono: so pra quem chega do TikTok/YouTube
+    if(net==='tiktok'||net==='youtube'){ document.querySelectorAll('.sp-aula,.sp-ebook').forEach(function(el){ el.hidden=false; }); }
     var HOSTS=['perfis.','tdapocket.','db.','td.','mr.','fraldas.','clubedosono.'];
     document.querySelectorAll('.wrap a[href^="http"]').forEach(function(a){
       var h; try{ h=new URL(a.href).hostname; }catch(e){ return; }
@@ -428,6 +443,7 @@
         if(a.classList.contains('wafloat')) cat='whatsapp';
         else if(a.closest('.quizcard')) cat='quiz';
         else if(a.classList.contains('sp-aula')) cat='aula';
+        else if(a.classList.contains('sp-ebook')) cat='ebook';
         else{
           var c=a.closest('details.cat');
           if(c){ cat=c.classList.contains('p-gestantes')?'gestante':c.classList.contains('p-amam')?'amamentacao':c.classList.contains('p-sono')?'sono':c.classList.contains('p-ofertas')?'ofertas':'outro'; }
