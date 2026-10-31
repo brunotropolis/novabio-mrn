@@ -117,17 +117,10 @@ const PHASES={
     body:()=>
       aula('sp-aula-s', `${PREV}/clube-do-bebe/autonomia-do-sono/`, `${A}/th-sono-2.jpg`, 'Autonomia de sono') +
       ebook('sp-ebook-s', `https://ebooksono.manualdorecemnascido.com.br/?${UTM}`, `${A}/capa-ebook-sono.jpg`, 'Os 5 motivos do bebê não dormir no berço') +
-      SECT('Pra começar hoje') + `
-    <a class="quizcard" href="https://perfis.manualdorecemnascido.com.br/?${UTM}">
-      <span class="tw" style="--acc:rgba(255,255,255,.25);--acc-dk:#574A78">
-        <img class="thumb" src="${A}/sono-pocket.jpg" alt="" style="transform:scaleX(-1)">
-        <span class="vec"><svg viewBox="0 0 24 24">${ICON.moon}</svg></span>
-      </span>
-      <span class="qtxt">
-        <div class="qtitle">Descubra o perfil de <span style="color:#F0D6A0;white-space:nowrap">sono do seu bebê</span></div>
-        <div class="qsub">Faça o quiz gratuito <span class="arrow">›</span></div>
-      </span>
-    </a>` +
+      special('sp-quiz-s', `https://perfis.manualdorecemnascido.com.br/?${UTM}`,
+        `<span class="stile squiz"><img src="${A}/sono-pocket.jpg" alt="" style="transform:scaleX(-1)"><span class="qbadge"><svg viewBox="0 0 24 24">${ICON.moon}</svg></span></span>`,
+        'Quiz gratuito', 'Descubra o perfil de sono do seu bebê', '✓ Fazer o quiz') +
+      SECT('Pra começar hoje') +
       row(`https://dbpocket.manualdorecemnascido.com.br/?${UTM}`, `${A}/metodo-sono.jpg`, 'moon',
         'Curso em vídeo', 'Dream Baby Pocket', 'Em 30 minutos você aplica a técnica para fazer seu bebê dormir bem e sem choro') +
       row(`https://db.manualdorecemnascido.com.br/consulta-do-sono-com-day?${UTM}`, `${A}/consulta-sono.jpg`, 'video',

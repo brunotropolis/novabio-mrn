@@ -295,3 +295,10 @@
   .phasebody .row{margin-top:0}
   .phasebody .quizcard{margin-top:0;margin-bottom:11px}
   .phasebody>.sect:first-child{margin-top:0}
+  /* quiz no mesmo formato de aula/ebook */
+  .sp-quiz-s{background:linear-gradient(135deg,#6E5A86,#3A3560)}
+  .special .squiz{position:relative;overflow:visible}
+  .special .squiz img{border-radius:20px;object-fit:cover}
+  .special .squiz .qbadge{position:absolute;right:-6px;bottom:-6px;width:30px;height:30px;border-radius:50%;background:#F0D6A0;
+    display:flex;align-items:center;justify-content:center;box-shadow:0 5px 12px -4px rgba(0,0,0,.5)}
+  .special .squiz .qbadge svg{width:15px;height:15px;fill:none;stroke:#3A3560;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
