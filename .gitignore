@@ -9,3 +9,4 @@ _backup/
 _shot_*.png
 _preview_open.html
 preview.html
+.claude/
