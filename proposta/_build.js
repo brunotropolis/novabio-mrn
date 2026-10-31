@@ -139,7 +139,6 @@ for(const [slug,p] of Object.entries(PHASES)){
   const html = head(`${p.title} · Dayane Dos Anjos`, 1, `bg-${slug}`) + `
   <div class="topbar">
     <a class="back" href="../" data-keep><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>Voltar</a>
-    <span class="mini"><img src="${A}/profile.jpg" alt="">Dayane Dos Anjos</span>
   </div>
 
   <header class="phasehero ${p.cls}">
