@@ -214,22 +214,32 @@
   .topbar .mini img{width:30px;height:30px;border-radius:50%;object-fit:cover;border:2px solid #fff}
 
   /* cabeçalho da fase */
-  /* topo da fase: título "plano" (não é botão) */
-  .phasehero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:4px 10px 0;background:none;border:0}
-  .phasehero .pic{width:92px;height:92px;border-radius:50%;overflow:hidden;border:4px solid #fff;box-shadow:0 12px 26px -14px rgba(60,30,50,.55)}
-  .phasehero .pic img{width:100%;height:100%;object-fit:cover;display:block}
-  .phasehero .phkick{display:block;margin-top:12px;font-size:.66rem;letter-spacing:2.4px;text-transform:uppercase;font-weight:600;color:var(--acc-dk)}
-  .phasehero h1{font-family:'Fraunces',serif;font-weight:400;font-size:2.1rem;line-height:1.05;color:var(--ink-ph);margin-top:4px}
-  .phasehero p{font-size:.9rem;color:var(--ink-soft);margin-top:6px}
-  .phasehero::after{content:"";display:block;width:56px;height:3px;border-radius:3px;background:var(--acc-dk);opacity:.5;margin-top:16px}
-  .phasehero.p-gestantes{--ink-ph:#7B3E62}
-  .phasehero.p-amam{--ink-ph:#5A2B42}
-  .phasehero.p-sono{--ink-ph:#1F2E55}
+  /* topo da fase: cabeçalho editorial (foto sangrando + título), sem caixa */
+  .wrap{position:relative}
+  .topbar{position:relative;z-index:3}
+  .phasehero{position:relative;margin:-92px -18px 0;padding:0}
+  .phasehero .phimg{height:330px;background-size:cover;background-position:center 30%;
+    -webkit-mask-image:linear-gradient(to bottom,#000 45%,transparent 100%);mask-image:linear-gradient(to bottom,#000 45%,transparent 100%)}
+  .phasehero .phtxt{position:relative;margin-top:-118px;padding:0 22px;text-align:left}
+  .phasehero .phkick{display:inline-block;font-size:.62rem;letter-spacing:2.6px;text-transform:uppercase;font-weight:600;color:var(--kick);
+    border-bottom:1.5px solid var(--kick);padding-bottom:3px}
+  .phasehero h1{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:2.7rem;line-height:1;color:#fff;margin-top:10px;
+    text-shadow:0 4px 24px rgba(0,0,0,.35)}
+  .phasehero p{font-size:.95rem;color:rgba(255,255,255,.82);margin-top:8px}
+  .p-gestantes{--kick:#F6C4DA}
+  .p-amam{--kick:#F0A9C2}
+  .p-sono{--kick:#A0BDE8}
 
-  /* fundo levemente diferente por fase */
-  body.bg-gestante{background:radial-gradient(circle at 14% 3%,rgba(255,255,255,.6),transparent 34%),radial-gradient(circle at 88% 98%,rgba(232,160,140,.35),transparent 48%),linear-gradient(168deg,#FDF1EC 0%,#F8DFD6 55%,#F1CDC1 100%);background-attachment:fixed}
-  body.bg-amamentacao{background:radial-gradient(circle at 14% 3%,rgba(255,255,255,.55),transparent 34%),radial-gradient(circle at 88% 98%,rgba(170,90,130,.28),transparent 48%),linear-gradient(168deg,#F7E8EF 0%,#EDD2DF 55%,#E2BDCF 100%);background-attachment:fixed}
-  body.bg-sono{background:radial-gradient(circle at 14% 3%,rgba(255,255,255,.6),transparent 34%),radial-gradient(circle at 88% 98%,rgba(110,130,200,.3),transparent 48%),linear-gradient(168deg,#EEF1FB 0%,#DCE2F5 55%,#CAD3EE 100%);background-attachment:fixed}
+  /* fundo da página da fase: tom do botão da home, mais escuro (ar de seção) */
+  body.bg-gestante{background:linear-gradient(175deg,#8A4E70 0%,#6A3955 45%,#4A2639 100%) fixed}
+  body.bg-amamentacao{background:linear-gradient(175deg,#5E2C44 0%,#46202F 45%,#2E1420 100%) fixed}
+  body.bg-sono{background:linear-gradient(175deg,#23335C 0%,#18244A 45%,#0E1630 100%) fixed}
+  body[class^="bg-"] .sect{color:rgba(255,255,255,.62)}
+  body[class^="bg-"] .topbar .mini{color:rgba(255,255,255,.85)}
+  body[class^="bg-"] footer .cp{color:rgba(255,255,255,.55)}
+  body[class^="bg-"] .footlogo{border-color:rgba(255,255,255,.35)}
+  body[class^="bg-"] .special,body[class^="bg-"] .quizcard{border:1px solid rgba(255,255,255,.16);box-shadow:0 18px 34px -16px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.12)}
+  body[class^="bg-"] .row{border-color:rgba(255,255,255,.2);box-shadow:0 14px 28px -14px rgba(0,0,0,.6)}
 
   /* card único de ofertas na home */
   .sp-ofertas{background:linear-gradient(135deg,#6E9070,#3F5C44);margin-top:28px}

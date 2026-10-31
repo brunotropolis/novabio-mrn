@@ -1,6 +1,7 @@
 // Gera as paginas da proposta (home + 3 fases). Rodar: node proposta/_build.js
 const fs=require('fs'), path=require('path');
 const D=__dirname;
+const V=Date.now().toString(36);
 const UTM='utm_source=instagram&utm_campaign=organico&utm_medium=publico-q&utm_id=clicou-link&utm_content=link-da-bio&src=organico%7Cpublico-q%7Cclicou-link%7Clink-da-bio';
 // aulas de 10/11 = paginas da Black 2026 (ainda so em previa; trocar quando tiver dominio definitivo)
 const PREV='https://brunotropolis.github.io/supernanny-previews/2026-10-26-black-2026';
@@ -25,7 +26,7 @@ function head(title, depth, bc=''){
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="${up}bio.css">
+<link rel="stylesheet" href="${up}bio.css?v=${V}">
 </head>
 <body${bc?` class="${bc}"`:''}>
 <div class="wrap">
@@ -50,7 +51,7 @@ function foot(depth){
 <a class="wafloat" href="https://api.whatsapp.com/send?phone=554184144810&text=Oi,%20eu%20estava%20no%20Instagram%20e%20quero%20saber%20mais%20sobre%20os%20Cursos%20%26%20Consultas%20da%20Day.." target="_blank" rel="noopener" aria-label="Fale com a Carol no WhatsApp">
   <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.1-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 5 5 0 0 0 1 2.6 11 11 0 0 0 4.3 3.8c1.6.7 1.9.6 2.3.5a2.3 2.3 0 0 0 1.5-1.1c.2-.4.2-.8.1-.9z"/></svg>
 </a>
-<script src="${up}bio.js"></script>
+<script src="${up}bio.js?v=${V}"></script>
 </body>
 </html>
 `;
@@ -142,7 +143,7 @@ for(const [slug,p] of Object.entries(PHASES)){
   </div>
 
   <header class="phasehero ${p.cls}">
-    <span class="pic"><img src="${A}/${p.pic}" alt=""></span>
+    <div class="phimg" style="background-image:url('${A}/hero-${slug}.jpg')"></div>
     <div class="phtxt"><span class="phkick">Você está em</span><h1>${p.title}</h1><p>${p.desc}</p></div>
   </header>
 
@@ -177,7 +178,6 @@ const home = head('Dayane Dos Anjos · Manual do Recém-Nascido', 0) + `
     </div>
     <h1 class="serif">Dayane Dos Anjos</h1>
     <div class="role">Manual do Recém-Nascido</div>
-    <p class="tag">Consultora de sono, amamentação e cuidados com o bebê 💛</p>
   </header>
 
   <h2 class="askphase">Em que fase você está?</h2>
