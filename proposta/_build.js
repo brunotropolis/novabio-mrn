@@ -12,7 +12,7 @@ const ICON={
   moon:'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>',
 };
 
-function head(title, depth){
+function head(title, depth, bc=''){
   const up=depth?'../':'';
   return `<!DOCTYPE html>
 <html lang="pt-BR">
@@ -27,7 +27,7 @@ function head(title, depth){
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${up}bio.css">
 </head>
-<body>
+<body${bc?` class="${bc}"`:''}>
 <div class="wrap">
 `;
 }
@@ -135,7 +135,7 @@ const PHASES={
 
 // ---- páginas das fases
 for(const [slug,p] of Object.entries(PHASES)){
-  const html = head(`${p.title} · Dayane Dos Anjos`, 1) + `
+  const html = head(`${p.title} · Dayane Dos Anjos`, 1, `bg-${slug}`) + `
   <div class="topbar">
     <a class="back" href="../" data-keep><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>Voltar</a>
     <span class="mini"><img src="${A}/profile.jpg" alt="">Dayane Dos Anjos</span>
@@ -143,7 +143,7 @@ for(const [slug,p] of Object.entries(PHASES)){
 
   <header class="phasehero ${p.cls}">
     <span class="pic"><img src="${A}/${p.pic}" alt=""></span>
-    <div><h1>${p.title}</h1><p>${p.desc}</p></div>
+    <div class="phtxt"><span class="phkick">Você está em</span><h1>${p.title}</h1><p>${p.desc}</p></div>
   </header>
 
   <div class="phasebody">
@@ -184,19 +184,15 @@ const home = head('Dayane Dos Anjos · Manual do Recém-Nascido', 0) + `
   <div class="pickhint">Toque na sua fase 👇</div>
 ${Object.entries(PHASES).map(([s,p])=>phaseLink(s,p)).join('')}
 
-  <div class="sect" style="margin-top:30px">Ofertas fraldas &amp; produtos</div>
-  <div class="cat p-ofertas" style="padding:14px 15px 4px">
-    <a class="row" href="https://fraldas.manualdorecemnascido.com.br/?${UTM}">
-      <span class="tw"><img class="thumb" src="${H}/fraldas-day.jpg" alt=""><span class="vec"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span></span>
-      <span class="rtxt"><span class="tag">Site de busca</span><div class="rtitle">Busca Fraldas</div><div class="rsub">As melhores ofertas de fraldas, <b>atualizado diariamente</b> em um só lugar</div></span>
-      <span class="chev">${CHEV}</span>
-    </a>
-    <a class="row" href="https://asofertasmaternas.com.br/?${UTM}">
-      <span class="tw"><img class="thumb" src="${H}/ofertas-whats-day.jpg" alt=""><span class="vec"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/></svg></span></span>
-      <span class="rtxt"><span class="tag">Grupo no WhatsApp</span><div class="rtitle oneline">As Ofertas Maternas</div><div class="rsub">O melhor grupo de ofertas, descontos e cupons exclusivos de produtos pro bebê</div></span>
-      <span class="chev">${CHEV}</span>
-    </a>
-  </div>
+  <a class="special sp-ofertas" href="https://asofertasmaternas.com.br/?${UTM}">
+    <span class="stile"><img src="${H}/ofertas-whats-day.jpg" alt=""></span>
+    <span class="stxt">
+      <span class="skick">As Ofertas Maternas</span>
+      <div class="stitle">Procurando as melhores ofertas de produtos para bebês?</div>
+      <div class="ssub">Clique aqui 💚</div>
+    </span>
+    ${WCHEV}
+  </a>
 
   <div class="simple-parc">
     <div class="sp-title">parceria &amp; publicidade</div>

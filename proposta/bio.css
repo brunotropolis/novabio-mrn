@@ -214,12 +214,27 @@
   .topbar .mini img{width:30px;height:30px;border-radius:50%;object-fit:cover;border:2px solid #fff}
 
   /* cabeçalho da fase */
-  .phasehero{border-radius:26px;background:var(--pbg);border:1px solid var(--pbd);padding:18px;color:#fff;
-    box-shadow:0 16px 32px -22px rgba(50,25,45,.6);display:flex;align-items:center;gap:15px}
-  .phasehero .pic{width:74px;height:74px;border-radius:20px;overflow:hidden;flex-shrink:0;border:2px solid rgba(255,255,255,.55)}
+  /* topo da fase: título "plano" (não é botão) */
+  .phasehero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:4px 10px 0;background:none;border:0}
+  .phasehero .pic{width:92px;height:92px;border-radius:50%;overflow:hidden;border:4px solid #fff;box-shadow:0 12px 26px -14px rgba(60,30,50,.55)}
   .phasehero .pic img{width:100%;height:100%;object-fit:cover;display:block}
-  .phasehero h1{font-family:'Fraunces',serif;font-weight:500;font-size:1.5rem;line-height:1.1}
-  .phasehero p{font-size:.84rem;color:rgba(255,255,255,.8);margin-top:4px}
+  .phasehero .phkick{display:block;margin-top:12px;font-size:.66rem;letter-spacing:2.4px;text-transform:uppercase;font-weight:600;color:var(--acc-dk)}
+  .phasehero h1{font-family:'Fraunces',serif;font-weight:400;font-size:2.1rem;line-height:1.05;color:var(--ink-ph);margin-top:4px}
+  .phasehero p{font-size:.9rem;color:var(--ink-soft);margin-top:6px}
+  .phasehero::after{content:"";display:block;width:56px;height:3px;border-radius:3px;background:var(--acc-dk);opacity:.5;margin-top:16px}
+  .phasehero.p-gestantes{--ink-ph:#7B3E62}
+  .phasehero.p-amam{--ink-ph:#5A2B42}
+  .phasehero.p-sono{--ink-ph:#1F2E55}
+
+  /* fundo levemente diferente por fase */
+  body.bg-gestante{background:radial-gradient(circle at 14% 3%,rgba(255,255,255,.6),transparent 34%),radial-gradient(circle at 88% 98%,rgba(232,160,140,.35),transparent 48%),linear-gradient(168deg,#FDF1EC 0%,#F8DFD6 55%,#F1CDC1 100%);background-attachment:fixed}
+  body.bg-amamentacao{background:radial-gradient(circle at 14% 3%,rgba(255,255,255,.55),transparent 34%),radial-gradient(circle at 88% 98%,rgba(170,90,130,.28),transparent 48%),linear-gradient(168deg,#F7E8EF 0%,#EDD2DF 55%,#E2BDCF 100%);background-attachment:fixed}
+  body.bg-sono{background:radial-gradient(circle at 14% 3%,rgba(255,255,255,.6),transparent 34%),radial-gradient(circle at 88% 98%,rgba(110,130,200,.3),transparent 48%),linear-gradient(168deg,#EEF1FB 0%,#DCE2F5 55%,#CAD3EE 100%);background-attachment:fixed}
+
+  /* card único de ofertas na home */
+  .sp-ofertas{background:linear-gradient(135deg,#6E9070,#3F5C44);margin-top:28px}
+  .sp-ofertas .stile img{object-fit:cover}
+  .sp-ofertas .ssub{font-weight:500}
   .sect{margin:22px 0 2px;font-size:.68rem;letter-spacing:2.4px;text-transform:uppercase;color:#a4657f;font-weight:600;text-align:center}
 
   /* cards aula / ebook na página da fase */
