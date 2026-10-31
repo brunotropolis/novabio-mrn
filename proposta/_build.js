@@ -75,8 +75,8 @@ function special(cls, href, tile, kick, title, cta){
 const vid = img => `<span class="stile svid"><img src="${img}" alt=""><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span></span>`;
 // miniatura de ebook: capa em pé, com cara de livro
 const book = img => `<span class="sbook"><img src="${img}" alt=""></span>`;
-const aula = (cls, href, img, title) => special(cls, href, vid(img), 'Aula gratuita', title, '▶ Quero assistir');
-const ebook = (cls, href, img, title) => special(cls, href, book(img), 'Ebook gratuito', title, '↓ Baixar grátis');
+const aula = (cls, href, img, title) => special(cls, href, vid(img), 'Aula gratuita', title, 'Quero assistir &gt;');
+const ebook = (cls, href, img, title) => special(cls, href, book(img), 'Ebook gratuito', title, 'Baixar grátis &gt;');
 const SECT = t => `
     <div class="sect">${t}</div>`;
 
@@ -119,7 +119,7 @@ const PHASES={
       ebook('sp-ebook-s', `https://ebooksono.manualdorecemnascido.com.br/?${UTM}`, `${A}/capa-ebook-sono.jpg`, 'Os 5 motivos do bebê não dormir no berço') +
       special('sp-quiz-s', `https://perfis.manualdorecemnascido.com.br/?${UTM}`,
         `<span class="stile squiz"><img src="${A}/sono-pocket.jpg" alt="" style="transform:scaleX(-1)"><span class="qbadge"><svg viewBox="0 0 24 24">${ICON.moon}</svg></span></span>`,
-        'Quiz gratuito', 'Descubra o perfil de sono do seu bebê', '✓ Fazer o quiz') +
+        'Quiz gratuito', 'Descubra o perfil de sono do seu bebê', 'Fazer o quiz &gt;') +
       SECT('Pra começar hoje') +
       row(`https://dbpocket.manualdorecemnascido.com.br/?${UTM}`, `${A}/metodo-sono.jpg`, 'moon',
         'Curso em vídeo', 'Dream Baby Pocket', 'Em 30 minutos você aplica a técnica para fazer seu bebê dormir bem e sem choro') +
