@@ -241,6 +241,23 @@
   body[class^="bg-"] .special,body[class^="bg-"] .quizcard{border:1px solid rgba(255,255,255,.16);box-shadow:0 18px 34px -16px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.12)}
   body[class^="bg-"] .row{border-color:rgba(255,255,255,.2);box-shadow:0 14px 28px -14px rgba(0,0,0,.6)}
 
+
+  /* "Você está em" / kicker em branco (contraste) */
+  .phasehero .phkick{color:#fff;border-bottom-color:rgba(255,255,255,.85)}
+
+  /* topo da home: foto grande da Day, mesma pegada das fases */
+  .homehero{margin:-32px -18px 0}
+  .homehero .phimg{height:440px;background-position:center 18%;position:relative;
+    -webkit-mask-image:linear-gradient(to bottom,#000 74%,transparent 100%);mask-image:linear-gradient(to bottom,#000 74%,transparent 100%)}
+  .homehero .phimg::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,transparent 42%,rgba(70,28,56,.78) 82%)}
+  .homehero .phtxt{margin-top:-150px}
+  .homehero h1{font-size:2.6rem}
+  .homehero+.askphase{margin-top:46px}
+
+  /* mesmo respiro em todas as seções da fase */
+  .phasebody>.sect{margin:30px 0 14px}
+  .phasebody>.special,.phasebody>.quizcard,.phasebody>.row{margin-top:0;margin-bottom:14px}
+
   /* card único de ofertas na home */
   .sp-ofertas{background:linear-gradient(135deg,#6E9070,#3F5C44);margin-top:28px}
   .sp-ofertas .stile img{object-fit:cover}

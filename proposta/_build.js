@@ -105,7 +105,7 @@ const PHASES={
       special('sp-ebook-a', `https://ebookama.manualdorecemnascido.com.br/?${UTM}`, `${A}/th-amam-3.jpg`,
         'Ebook gratuito', 'Por que meu bebê parece não saciar no seio?',
         'Baixe gratuitamente o ebook') +
-      '\n    <div class="sect">Curso em vídeo</div>' +
+      '\n    <div class="sect">Pra começar hoje</div>' +
       row(`https://tdapocket.manualdorecemnascido.com.br/?${UTM}`, `${A}/guia-pega.jpg`, 'heart',
         'Curso em vídeo', 'Guia da Pega', 'Amamente sem dor e com o bebê saciado'),
   },
@@ -164,19 +164,9 @@ const phaseLink=(slug,p)=>`
     </div>
   </a>`;
 const home = head('Dayane Dos Anjos · Manual do Recém-Nascido', 0) + `
-  <header class="profile">
-    <div class="hero">
-      <span class="glow g1"></span>
-      <span class="glow g2"></span>
-      <span class="ring"></span>
-      <img class="ph" src="${H}/profile.jpg" alt="Dayane Dos Anjos">
-      <span class="dec d1"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"/></svg></span>
-      <span class="dec d2"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"/></svg></span>
-      <span class="dec d3"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l1.4 4.6L18 10l-4.6 1.4L12 16l-1.4-4.6L6 10l4.6-1.4z"/></svg></span>
-      <span class="dec d4"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg></span>
-    </div>
-    <h1 class="serif">Dayane Dos Anjos</h1>
-    <div class="role">Manual do Recém-Nascido</div>
+  <header class="phasehero homehero">
+    <div class="phimg" style="background-image:url('${H}/hero-home.jpg')"></div>
+    <div class="phtxt"><span class="phkick">Manual do Recém-Nascido</span><h1>Dayane Dos Anjos</h1></div>
   </header>
 
   <h2 class="askphase">Em que fase você está?</h2>
