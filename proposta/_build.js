@@ -11,6 +11,7 @@ const ICON={
   book:'<path d="M4 5a2 2 0 0 1 2-2h6v16H6a2 2 0 0 0-2 2z"/><path d="M20 5a2 2 0 0 0-2-2h-6v16h6a2 2 0 0 1 2 2z"/>',
   heart:'<path d="M12 20S3.8 15 3.8 9.2A3.9 3.9 0 0 1 12 6.8a3.9 3.9 0 0 1 8.2 2.4C20.2 15 12 20 12 20z"/>',
   moon:'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>',
+  video:'<path d="M15 10l5-3v10l-5-3v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/>',
 };
 
 function head(title, depth, bc=''){
@@ -57,21 +58,28 @@ function foot(depth){
 `;
 }
 
-// card escuro (aula / ebook)
-function special(cls, href, img, kick, title, sub, date){
+// card escuro (aula / ebook): o que é + chamada
+function special(cls, href, tile, kick, title, cta){
   return `
     <a class="special ${cls}" href="${href}">
-      <span class="stile"><img src="${img}" alt=""></span>
+      ${tile}
       <span class="stxt">
         <span class="skick">${kick}</span>
         <div class="stitle">${title}</div>
-        <div class="ssub">${sub}</div>${date ? `\n        <span class="sdate">📅 ${date}</span>` : ''}
+        <span class="scta">${cta}</span>
       </span>
       ${WCHEV}
     </a>`;
 }
+// miniatura de aula: foto com botão de play por cima
+const vid = img => `<span class="stile svid"><img src="${img}" alt=""><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span></span>`;
+// miniatura de ebook: capa em pé, com cara de livro
+const book = img => `<span class="sbook"><img src="${img}" alt=""></span>`;
+const aula = (cls, href, img, title) => special(cls, href, vid(img), 'Aula gratuita', title, '▶ Quero assistir');
+const ebook = (cls, href, img, title) => special(cls, href, book(img), 'Ebook gratuito', title, '↓ Baixar grátis');
+const GAP = '\n    <div class="gap"></div>';
 
-// botão claro (curso)
+// botão claro (curso / consulta)
 function row(href, img, icon, tag, title, sub){
   return `
     <a class="row" href="${href}">
@@ -86,39 +94,29 @@ const PHASES={
   gestante:{
     cls:'p-gestantes', title:'Gestante', desc:'Prepare tudo antes do bebê chegar', pic:'th-gestante.jpg',
     body:()=>
-      special('sp-aula-g', `${PREV}/black-maternity/`, `${A}/tecnica-anjos.jpg`,
-        'Aula gratuita', 'Os desafios da maternidade',
-        'A Day vai disponibilizar uma aula gratuita sobre os desafios da maternidade', 'Terça-feira, 10/11') +
-      special('sp-ebook-g', `https://ebookenxoval.manualdorecemnascido.com.br/?${UTM}`, `${A}/manual.jpg`,
-        'Ebook gratuito', 'Enxoval Descomplicado',
-        'Baixe o ebook: tudo que você precisa saber para montar um enxoval perfeito!') +
-      '\n    <div class="sect">Curso completo</div>' +
+      aula('sp-aula-g', `${PREV}/black-maternity/`, `${A}/tecnica-anjos.jpg`, 'Os desafios da maternidade') +
+      ebook('sp-ebook-g', `https://ebookenxoval.manualdorecemnascido.com.br/?${UTM}`, `${A}/capa-ebook-enxoval.jpg`, 'Enxoval Descomplicado') +
+      GAP +
       row(`https://mr.manualdorecemnascido.com.br/?${UTM}`, `${A}/manual.jpg`, 'book',
         'Tudo em um só lugar', 'Manual do Recém-Nascido', 'Amamentação, sono e cuidados do zero, antes e depois do parto'),
   },
   amamentacao:{
     cls:'p-amam', title:'Amamentação', desc:'Amamente sem dor, do começo ao fim', pic:'th-amam-1.jpg',
     body:()=>
-      special('sp-aula-a', `${PREV}/clube-do-bebe/amamentacao/`, `${A}/th-amam-2.jpg`,
-        'Aula gratuita', 'Mamando ou chupetando?',
-        'A Day vai disponibilizar uma aula exclusiva sobre “Como saber se o bebê está mamando ou chupetando?”', 'Terça-feira, 10/11') +
-      special('sp-ebook-a', `https://ebookama.manualdorecemnascido.com.br/?${UTM}`, `${A}/th-amam-3.jpg`,
-        'Ebook gratuito', 'Por que meu bebê parece não saciar no seio?',
-        'Baixe gratuitamente o ebook') +
-      '\n    <div class="sect">Pra começar hoje</div>' +
+      aula('sp-aula-a', `${PREV}/clube-do-bebe/amamentacao/`, `${A}/th-amam-2.jpg`, 'Mamando ou chupetando?') +
+      ebook('sp-ebook-a', `https://ebookama.manualdorecemnascido.com.br/?${UTM}`, `${A}/capa-ebook-ama.jpg`, 'Por que meu bebê parece não saciar no seio?') +
+      GAP +
       row(`https://tdapocket.manualdorecemnascido.com.br/?${UTM}`, `${A}/guia-pega.jpg`, 'heart',
-        'Curso em vídeo', 'Guia da Pega', 'Amamente sem dor e com o bebê saciado'),
+        'Curso em vídeo', 'Guia da Pega', 'Amamente sem dor e com o bebê saciado') +
+      row(`https://td.manualdorecemnascido.com.br/consulta-de-amamentacao?${UTM}`, `${A}/consulta-amam.jpg`, 'video',
+        'Consulta individual', 'Consulta de Amamentação', 'Videochamada com a Day pra parar a dor e ver seu bebê mamando bem'),
   },
   sono:{
     cls:'p-sono', title:'Sono do Bebê', desc:'Faça seu bebê dormir bem e no berço', pic:'th-sono-1.jpg',
     body:()=>
-      special('sp-aula-s', `${PREV}/clube-do-bebe/autonomia-do-sono/`, `${A}/th-sono-2.jpg`,
-        'Aula gratuita', 'Autonomia de Sono',
-        'A Day vai disponibilizar uma aula exclusiva sobre autonomia de sono', 'Terça-feira, 10/11') +
-      special('sp-ebook-s', `https://ebooksono.manualdorecemnascido.com.br/?${UTM}`, `${A}/th-sono-3.jpg`,
-        'Ebook gratuito', '5 motivos que seu bebê não dorme no berço',
-        'Baixe o ebook sobre o sono do bebê e entenda o que está acontecendo') +
-      '\n    <div class="sect">Pra começar hoje</div>' + `
+      aula('sp-aula-s', `${PREV}/clube-do-bebe/autonomia-do-sono/`, `${A}/th-sono-2.jpg`, 'Autonomia de sono') +
+      ebook('sp-ebook-s', `https://ebooksono.manualdorecemnascido.com.br/?${UTM}`, `${A}/capa-ebook-sono.jpg`, 'Os 5 motivos do bebê não dormir no berço') +
+      GAP + `
     <a class="quizcard" href="https://perfis.manualdorecemnascido.com.br/?${UTM}">
       <span class="tw" style="--acc:rgba(255,255,255,.25);--acc-dk:#574A78">
         <img class="thumb" src="${A}/sono-pocket.jpg" alt="" style="transform:scaleX(-1)">
@@ -130,7 +128,9 @@ const PHASES={
       </span>
     </a>` +
       row(`https://dbpocket.manualdorecemnascido.com.br/?${UTM}`, `${A}/metodo-sono.jpg`, 'moon',
-        'Curso em vídeo', 'Dream Baby Pocket', 'Em 30 minutos você aplica a técnica para fazer seu bebê dormir bem e sem choro'),
+        'Curso em vídeo', 'Dream Baby Pocket', 'Em 30 minutos você aplica a técnica para fazer seu bebê dormir bem e sem choro') +
+      row(`https://db.manualdorecemnascido.com.br/consulta-do-sono-com-day?${UTM}`, `${A}/consulta-sono.jpg`, 'video',
+        'Consulta individual', 'Consulta de Sono', 'Videochamada com a Day pro seu bebê dormir no berço em poucos dias'),
   },
 };
 
@@ -146,8 +146,7 @@ for(const [slug,p] of Object.entries(PHASES)){
     <div class="phtxt"><span class="phkick">Você está em</span><h1>${p.title}</h1><p>${p.desc}</p></div>
   </header>
 
-  <div class="phasebody">
-    <div class="sect">Gratuito pra você</div>${p.body()}
+  <div class="phasebody">${p.body()}
   </div>
 ` + foot(1);
   fs.writeFileSync(path.join(D,slug,'index.html'), html);
@@ -159,18 +158,12 @@ const phaseLink=(slug,p)=>`
   <a class="cat ${p.cls}" href="${slug}/" data-keep>
     <div class="phead">
       <span class="pic"><img src="${H}/${p.pic}" alt=""></span>
-      <div class="ptwrap"><span class="pt">${p.title}</span><span class="pdesc">${p.desc}</span></div>
+      <div class="ptwrap"><span class="pt">${p.title}</span></div>
       <span class="catchev">${CHEV}</span>
     </div>
   </a>`;
 const home = head('Dayane Dos Anjos · Manual do Recém-Nascido', 0) + `
-  <header class="phasehero homehero">
-    <div class="phimg" style="background-image:url('${H}/hero-home.jpg')"></div>
-    <div class="phtxt"><span class="phkick">Manual do Recém-Nascido</span><h1>Dayane Dos Anjos</h1></div>
-  </header>
-
-  <h2 class="askphase">Em que fase você está?</h2>
-  <div class="pickhint">Toque na sua fase 👇</div>
+  <h1 class="askphase">Em que fase você está?</h1>
 ${Object.entries(PHASES).map(([s,p])=>phaseLink(s,p)).join('')}
 
   <a class="special sp-ofertas" href="https://asofertasmaternas.com.br/?${UTM}">

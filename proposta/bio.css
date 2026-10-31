@@ -258,6 +258,22 @@
   .phasebody>.sect{margin:30px 0 14px}
   .phasebody>.special,.phasebody>.quizcard,.phasebody>.row{margin-top:0;margin-bottom:14px}
 
+  /* aula: miniatura com play / ebook: capa em pé / chamada em pílula */
+  .special .svid{position:relative}
+  .special .svid img{filter:brightness(.82)}
+  .special .svid .play{position:absolute;inset:0;margin:auto;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.92);
+    display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px -4px rgba(0,0,0,.5)}
+  .special .svid .play svg{width:18px;height:18px;fill:#3B2708;margin-left:3px}
+  .special .sbook{width:66px;height:90px;flex-shrink:0;margin:0 8px;border-radius:3px 7px 7px 3px;overflow:hidden;position:relative;
+    box-shadow:-4px 0 0 -1px rgba(0,0,0,.25),0 12px 22px -8px rgba(0,0,0,.6);transform:rotate(-4deg)}
+  .special .sbook img{width:100%;height:100%;object-fit:cover;display:block}
+  .special .sbook::after{content:"";position:absolute;inset:0 auto 0 0;width:7px;background:linear-gradient(90deg,rgba(0,0,0,.35),rgba(255,255,255,.12),transparent)}
+  .special .scta{display:inline-block;margin-top:9px;font-size:.74rem;font-weight:600;letter-spacing:.2px;color:#3B2708;
+    background:#fff;border-radius:20px;padding:5px 12px;box-shadow:0 5px 12px -5px rgba(0,0,0,.4)}
+  .phasebody{margin-top:26px}
+  .phasebody>.gap{height:14px}
+  .askphase:first-child{margin-top:18px;margin-bottom:6px;font-size:1.75rem}
+
   /* card único de ofertas na home */
   .sp-ofertas{background:linear-gradient(135deg,#6E9070,#3F5C44);margin-top:28px}
   .sp-ofertas .stile img{object-fit:cover}
