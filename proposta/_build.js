@@ -4,7 +4,6 @@ const D=__dirname;
 const V=Date.now().toString(36);
 const UTM='utm_source=instagram&utm_campaign=organico&utm_medium=publico-q&utm_id=clicou-link&utm_content=link-da-bio&src=organico%7Cpublico-q%7Cclicou-link%7Clink-da-bio';
 // aulas de 10/11 = paginas da Black 2026 (ainda so em previa; trocar quando tiver dominio definitivo)
-const PREV='https://brunotropolis.github.io/supernanny-previews/2026-10-26-black-2026';
 const CHEV='<svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>';
 const WCHEV='<span class="dchev"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>';
 const ICON={
@@ -95,7 +94,7 @@ const PHASES={
   gestante:{
     cls:'p-gestantes', title:'Gestante', desc:'Prepare tudo antes do bebê chegar', pic:'th-gestante.jpg',
     body:()=>
-      aula('sp-aula-g', `${PREV}/black-maternity/`, `${A}/tecnica-anjos.jpg`, 'Os desafios da maternidade') +
+      aula('sp-aula-g', `https://black.manualdorecemnascido.com.br/aula`, `${A}/tecnica-anjos.jpg`, 'Os desafios da maternidade') +
       ebook('sp-ebook-g', `https://ebookenxoval.manualdorecemnascido.com.br/?${UTM}`, `${A}/capa-ebook-enxoval.jpg`, 'Enxoval Descomplicado') +
       SECT('Curso completo') +
       row(`https://mr.manualdorecemnascido.com.br/?${UTM}`, `${A}/manual.jpg`, 'book',
@@ -104,7 +103,7 @@ const PHASES={
   amamentacao:{
     cls:'p-amam', title:'Amamentação', desc:'Amamente sem dor, do começo ao fim', pic:'th-amam-1.jpg',
     body:()=>
-      aula('sp-aula-a', `${PREV}/clube-do-bebe/amamentacao/`, `${A}/th-amam-2.jpg`, 'Mamando ou chupetando?') +
+      aula('sp-aula-a', `https://clube.manualdorecemnascido.com.br/amamentacao`, `${A}/th-amam-2.jpg`, 'Mamando ou chupetando?') +
       ebook('sp-ebook-a', `https://ebookama.manualdorecemnascido.com.br/?${UTM}`, `${A}/capa-ebook-ama.jpg`, 'Por que meu bebê parece não saciar no seio?') +
       SECT('Pra começar hoje') +
       row(`https://tdapocket.manualdorecemnascido.com.br/?${UTM}`, `${A}/guia-pega.jpg`, 'heart',
@@ -115,7 +114,7 @@ const PHASES={
   sono:{
     cls:'p-sono', title:'Sono do Bebê', desc:'Faça seu bebê dormir bem e no berço', pic:'th-sono-1.jpg',
     body:()=>
-      aula('sp-aula-s', `${PREV}/clube-do-bebe/autonomia-do-sono/`, `${A}/th-sono-2.jpg`, 'Autonomia de sono') +
+      aula('sp-aula-s', `https://clube.manualdorecemnascido.com.br/sono`, `${A}/th-sono-2.jpg`, 'Autonomia de sono') +
       ebook('sp-ebook-s', `https://ebooksono.manualdorecemnascido.com.br/?${UTM}`, `${A}/capa-ebook-sono.jpg`, 'Os 5 motivos do bebê não dormir no berço') +
       special('sp-quiz-s', `https://perfis.manualdorecemnascido.com.br/?${UTM}`,
         `<span class="stile squiz"><img src="${A}/sono-pocket.jpg" alt="" style="transform:scaleX(-1)"><span class="qbadge"><svg viewBox="0 0 24 24">${ICON.moon}</svg></span></span>`,
