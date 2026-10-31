@@ -77,7 +77,8 @@ const vid = img => `<span class="stile svid"><img src="${img}" alt=""><span clas
 const book = img => `<span class="sbook"><img src="${img}" alt=""></span>`;
 const aula = (cls, href, img, title) => special(cls, href, vid(img), 'Aula gratuita', title, '▶ Quero assistir');
 const ebook = (cls, href, img, title) => special(cls, href, book(img), 'Ebook gratuito', title, '↓ Baixar grátis');
-const GAP = '\n    <div class="gap"></div>';
+const SECT = t => `
+    <div class="sect">${t}</div>`;
 
 // botão claro (curso / consulta)
 function row(href, img, icon, tag, title, sub){
@@ -96,7 +97,7 @@ const PHASES={
     body:()=>
       aula('sp-aula-g', `${PREV}/black-maternity/`, `${A}/tecnica-anjos.jpg`, 'Os desafios da maternidade') +
       ebook('sp-ebook-g', `https://ebookenxoval.manualdorecemnascido.com.br/?${UTM}`, `${A}/capa-ebook-enxoval.jpg`, 'Enxoval Descomplicado') +
-      GAP +
+      SECT('Curso completo') +
       row(`https://mr.manualdorecemnascido.com.br/?${UTM}`, `${A}/manual.jpg`, 'book',
         'Tudo em um só lugar', 'Manual do Recém-Nascido', 'Amamentação, sono e cuidados do zero, antes e depois do parto'),
   },
@@ -105,7 +106,7 @@ const PHASES={
     body:()=>
       aula('sp-aula-a', `${PREV}/clube-do-bebe/amamentacao/`, `${A}/th-amam-2.jpg`, 'Mamando ou chupetando?') +
       ebook('sp-ebook-a', `https://ebookama.manualdorecemnascido.com.br/?${UTM}`, `${A}/capa-ebook-ama.jpg`, 'Por que meu bebê parece não saciar no seio?') +
-      GAP +
+      SECT('Pra começar hoje') +
       row(`https://tdapocket.manualdorecemnascido.com.br/?${UTM}`, `${A}/guia-pega.jpg`, 'heart',
         'Curso em vídeo', 'Guia da Pega', 'Amamente sem dor e com o bebê saciado') +
       row(`https://td.manualdorecemnascido.com.br/consulta-de-amamentacao?${UTM}`, `${A}/consulta-amam.jpg`, 'video',
@@ -116,7 +117,7 @@ const PHASES={
     body:()=>
       aula('sp-aula-s', `${PREV}/clube-do-bebe/autonomia-do-sono/`, `${A}/th-sono-2.jpg`, 'Autonomia de sono') +
       ebook('sp-ebook-s', `https://ebooksono.manualdorecemnascido.com.br/?${UTM}`, `${A}/capa-ebook-sono.jpg`, 'Os 5 motivos do bebê não dormir no berço') +
-      GAP + `
+      SECT('Pra começar hoje') + `
     <a class="quizcard" href="https://perfis.manualdorecemnascido.com.br/?${UTM}">
       <span class="tw" style="--acc:rgba(255,255,255,.25);--acc-dk:#574A78">
         <img class="thumb" src="${A}/sono-pocket.jpg" alt="" style="transform:scaleX(-1)">
@@ -143,10 +144,10 @@ for(const [slug,p] of Object.entries(PHASES)){
 
   <header class="phasehero ${p.cls}">
     <div class="phimg" style="background-image:url('${A}/hero-${slug}.jpg')"></div>
-    <div class="phtxt"><span class="phkick">Você está em</span><h1>${p.title}</h1><p>${p.desc}</p></div>
+    <div class="phtxt"><span class="phkick">Você está em</span><h1>${p.title}</h1></div>
   </header>
 
-  <div class="phasebody">${p.body()}
+  <div class="phasebody">${SECT('Gratuito pra você')}${p.body()}
   </div>
 ` + foot(1);
   fs.writeFileSync(path.join(D,slug,'index.html'), html);

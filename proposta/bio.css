@@ -294,3 +294,4 @@
   .sp-ebook-s{background:linear-gradient(135deg,#4A5A9C,#232B5C)}
   .phasebody .row{margin-top:0}
   .phasebody .quizcard{margin-top:0;margin-bottom:11px}
+  .phasebody>.sect:first-child{margin-top:0}
