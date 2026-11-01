@@ -278,6 +278,9 @@
   .sp-ofertas{background:linear-gradient(135deg,#6E9070,#3F5C44);margin-top:28px}
   .sp-ofertas .stile img{object-fit:cover}
   .sp-ofertas .ssub{font-weight:500}
+  .sp-black{background:linear-gradient(135deg,#3a1d3f,#120c14);margin:0 0 26px}
+  .sp-black .stile img{object-fit:cover}
+  .sp-black .skick{background:#F2C14E;color:#1a1016}
   .sect{margin:22px 0 2px;font-size:.68rem;letter-spacing:2.4px;text-transform:uppercase;color:#a4657f;font-weight:600;text-align:center}
 
   /* cards aula / ebook na página da fase */

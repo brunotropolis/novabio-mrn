@@ -94,7 +94,7 @@ const PHASES={
   gestante:{
     cls:'p-gestantes', title:'Gestante', desc:'Prepare tudo antes do bebê chegar', pic:'th-gestante.jpg',
     body:()=>
-      aula('sp-aula-g', `https://black.manualdorecemnascido.com.br/aula`, `${A}/tecnica-anjos.jpg`, 'Os desafios da maternidade') +
+      aula('sp-aula-g', `https://black.manualdorecemnascido.com.br/aula?${UTM}`, `${A}/tecnica-anjos.jpg`, 'Os desafios da maternidade') +
       ebook('sp-ebook-g', `https://ebookenxoval.manualdorecemnascido.com.br/?${UTM}`, `${A}/capa-ebook-enxoval.jpg`, 'Enxoval Descomplicado') +
       SECT('Curso completo') +
       row(`https://mr.manualdorecemnascido.com.br/?${UTM}`, `${A}/manual.jpg`, 'book',
@@ -103,7 +103,7 @@ const PHASES={
   amamentacao:{
     cls:'p-amam', title:'Amamentação', desc:'Amamente sem dor, do começo ao fim', pic:'th-amam-1.jpg',
     body:()=>
-      aula('sp-aula-a', `https://clube.manualdorecemnascido.com.br/amamentacao`, `${A}/th-amam-2.jpg`, 'Mamando ou chupetando?') +
+      aula('sp-aula-a', `https://clube.manualdorecemnascido.com.br/amamentacao?${UTM}`, `${A}/th-amam-2.jpg`, 'Mamando ou chupetando?') +
       ebook('sp-ebook-a', `https://ebookama.manualdorecemnascido.com.br/?${UTM}`, `${A}/capa-ebook-ama.jpg`, 'Por que meu bebê parece não saciar no seio?') +
       SECT('Pra começar hoje') +
       row(`https://tdapocket.manualdorecemnascido.com.br/?${UTM}`, `${A}/guia-pega.jpg`, 'heart',
@@ -114,7 +114,7 @@ const PHASES={
   sono:{
     cls:'p-sono', title:'Sono do Bebê', desc:'Faça seu bebê dormir bem e no berço', pic:'th-sono-1.jpg',
     body:()=>
-      aula('sp-aula-s', `https://clube.manualdorecemnascido.com.br/sono`, `${A}/th-sono-2.jpg`, 'Autonomia de sono') +
+      aula('sp-aula-s', `https://clube.manualdorecemnascido.com.br/sono?${UTM}`, `${A}/th-sono-2.jpg`, 'Autonomia de sono') +
       ebook('sp-ebook-s', `https://ebooksono.manualdorecemnascido.com.br/?${UTM}`, `${A}/capa-ebook-sono.jpg`, 'Os 5 motivos do bebê não dormir no berço') +
       special('sp-quiz-s', `https://perfis.manualdorecemnascido.com.br/?${UTM}`,
         `<span class="stile squiz"><img src="${A}/sono-pocket.jpg" alt="" style="transform:scaleX(-1)"><span class="qbadge"><svg viewBox="0 0 24 24">${ICON.moon}</svg></span></span>`,
@@ -156,6 +156,15 @@ const phaseLink=(slug,p)=>`
     </div>
   </a>`;
 const home = head('Dayane Dos Anjos · Manual do Recém-Nascido', 0) + `
+  <a class="special sp-black" href="https://black.manualdorecemnascido.com.br/?${UTM}">
+    <span class="stile"><img src="${H}/tecnica-anjos.jpg" alt=""></span>
+    <span class="stxt">
+      <span class="skick">Black Friday da Day</span>
+      <div class="stitle">Black Maternity: entre no grupo VIP</div>
+      <span class="scta">Quero participar &gt;</span>
+    </span>
+    ${WCHEV}
+  </a>
   <h1 class="askphase">Em que fase você está?</h1>
 ${Object.entries(PHASES).map(([s,p])=>phaseLink(s,p)).join('')}
 

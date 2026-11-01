@@ -30,7 +30,7 @@
       }catch(_){}
     });
   }
-  var HOSTS=['perfis.','tdapocket.','dbpocket.','db.','td.','mr.','fraldas.','ebookenxoval.','ebookama.','ebooksono.','brunotropolis.github.io'];
+  var HOSTS=['perfis.','tdapocket.','dbpocket.','db.','td.','mr.','fraldas.','ebookenxoval.','ebookama.','ebooksono.','brunotropolis.github.io','black.','clube.','asofertasmaternas.'];
   document.querySelectorAll('.wrap a[href^="http"]').forEach(function(a){
     var h; try{ h=new URL(a.href).hostname; }catch(e){ return; }
     if(!HOSTS.some(function(p){ return h.indexOf(p)===0; })) return;
@@ -45,4 +45,30 @@
       a.href=u.toString();
     }catch(e){}
   });
+
+  // Coletor de cliques -> Worker bio-tracker (/__ev) -> Supabase bio_events (Dash Link Bio, filtro por rede).
+  // page = proposta/<fase>. Nada de dado pessoal: so rede, aparelho, botao e destino.
+  var ua=navigator.userAgent||'';
+  var device=/Mobi|Android|iPhone|iPod/i.test(ua)?'mobile':(/iPad|Tablet/i.test(ua)?'tablet':'desktop');
+  var os=/iPhone|iPad|iPod/i.test(ua)?'iOS':/Android/i.test(ua)?'Android':/Windows/i.test(ua)?'Windows':(/Mac OS X|Macintosh/i.test(ua)?'macOS':(/Linux/i.test(ua)?'Linux':'outro'));
+  var sid='',uid='';
+  try{ sid=sessionStorage.getItem('bio_sid'); if(!sid){ sid=Date.now().toString(36)+Math.random().toString(36).slice(2,8); sessionStorage.setItem('bio_sid',sid);} }catch(e){}
+  try{ uid=localStorage.getItem('bio_uid'); if(!uid){ uid=Date.now().toString(36)+Math.random().toString(36).slice(2,10); localStorage.setItem('bio_uid',uid);} }catch(e){}
+  var fase=location.pathname.replace(/\/+$/,'').split('/').pop();
+  var page=fase&&fase!=='proposta'?'proposta/'+fase:'proposta';
+  function ev(o){
+    o.sid=sid; o.uid=uid; o.rede=net; o.device=device; o.os=os; o.page=page; o.ref=document.referrer||'';
+    try{ navigator.sendBeacon('/__ev', new Blob([JSON.stringify(o)],{type:'application/json'})); }catch(e){}
+  }
+  ev({type:'pageview'});
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href]'); if(!a) return;
+    var cat=a.classList.contains('wafloat')?'whatsapp':a.classList.contains('sp-black')?'black':a.classList.contains('sp-ofertas')?'ofertas':
+      /sp-aula/.test(a.className)?'aula':/sp-ebook/.test(a.className)?'ebook':/sp-quiz/.test(a.className)?'quiz':
+      a.classList.contains('cat')?'fase':a.closest('footer')?'rodape':a.closest('.simple-parc')?'parceria':(fase||'home');
+    var t=a.querySelector('.rtitle,.stitle,.pt');
+    var label=t?t.textContent.trim():(a.getAttribute('aria-label')||(a.textContent||'').trim().slice(0,80));
+    var dest=''; try{ dest=new URL(a.href).hostname+new URL(a.href).pathname.replace(/\/$/,''); }catch(_){}
+    ev({type:'click', label:'proposta · '+label, category:cat, dest:dest.slice(0,120)});
+  },true);
 })();
