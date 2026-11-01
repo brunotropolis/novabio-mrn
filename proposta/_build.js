@@ -159,7 +159,7 @@ const home = head('Dayane Dos Anjos · Manual do Recém-Nascido', 0) + `
   <h1 class="askphase">Em que fase você está?</h1>
 ${Object.entries(PHASES).map(([s,p])=>phaseLink(s,p)).join('')}
 
-  <a class="special sp-ofertas" href="https://asofertasmaternas.com.br/?${UTM}">
+  <a class="special sp-ofertas" href="https://asofertasmaternas.com.br/l/entrar?${UTM}">
     <span class="stile"><img src="${H}/ofertas-whats-day.jpg" alt=""></span>
     <span class="stxt">
       <span class="skick">As Ofertas Maternas</span>
