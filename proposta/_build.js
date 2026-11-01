@@ -95,7 +95,7 @@ const PHASES={
     cls:'p-gestantes', title:'Gestante', desc:'Prepare tudo antes do bebê chegar', pic:'th-gestante.jpg',
     body:()=>
       aula('sp-aula-g', `https://black.manualdorecemnascido.com.br/aula?${UTM}`, `${A}/tecnica-anjos.jpg`, 'Os desafios da maternidade') +
-      ebook('sp-ebook-g', `https://ebookenxoval.manualdorecemnascido.com.br/?${UTM}`, `${A}/capa-ebook-enxoval.jpg`, 'Enxoval Descomplicado') +
+      ebook('sp-ebook-g', `https://black.manualdorecemnascido.com.br/enxoval?${UTM}`, `${A}/capa-ebook-enxoval.jpg`, 'Enxoval Descomplicado') +
       SECT('Curso completo') +
       row(`https://mr.manualdorecemnascido.com.br/?${UTM}`, `${A}/manual.jpg`, 'book',
         'Tudo em um só lugar', 'Manual do Recém-Nascido', 'Amamentação, sono e cuidados do zero, antes e depois do parto'),
@@ -104,7 +104,7 @@ const PHASES={
     cls:'p-amam', title:'Amamentação', desc:'Amamente sem dor, do começo ao fim', pic:'th-amam-1.jpg',
     body:()=>
       aula('sp-aula-a', `https://clube.manualdorecemnascido.com.br/amamentacao?${UTM}`, `${A}/th-amam-2.jpg`, 'Mamando ou chupetando?') +
-      ebook('sp-ebook-a', `https://ebookama.manualdorecemnascido.com.br/?${UTM}`, `${A}/capa-ebook-ama.jpg`, 'Por que meu bebê parece não saciar no seio?') +
+      ebook('sp-ebook-a', `https://clube.manualdorecemnascido.com.br/ebook-amamentacao?${UTM}`, `${A}/capa-ebook-ama.jpg`, 'Por que meu bebê parece não saciar no seio?') +
       SECT('Pra começar hoje') +
       row(`https://tdapocket.manualdorecemnascido.com.br/?${UTM}`, `${A}/guia-pega.jpg`, 'heart',
         'Curso em vídeo', 'Guia da Pega', 'Amamente sem dor e com o bebê saciado') +
@@ -115,7 +115,7 @@ const PHASES={
     cls:'p-sono', title:'Sono do Bebê', desc:'Faça seu bebê dormir bem e no berço', pic:'th-sono-1.jpg',
     body:()=>
       aula('sp-aula-s', `https://clube.manualdorecemnascido.com.br/sono?${UTM}`, `${A}/th-sono-2.jpg`, 'Autonomia de sono') +
-      ebook('sp-ebook-s', `https://ebooksono.manualdorecemnascido.com.br/?${UTM}`, `${A}/capa-ebook-sono.jpg`, 'Os 5 motivos do bebê não dormir no berço') +
+      ebook('sp-ebook-s', `https://clube.manualdorecemnascido.com.br/ebook-sono?${UTM}`, `${A}/capa-ebook-sono.jpg`, 'Os 5 motivos do bebê não dormir no berço') +
       special('sp-quiz-s', `https://perfis.manualdorecemnascido.com.br/?${UTM}`,
         `<span class="stile squiz"><img src="${A}/sono-pocket.jpg" alt="" style="transform:scaleX(-1)"><span class="qbadge"><svg viewBox="0 0 24 24">${ICON.moon}</svg></span></span>`,
         'Quiz gratuito', 'Descubra o perfil de sono do seu bebê', 'Fazer o quiz &gt;') +
