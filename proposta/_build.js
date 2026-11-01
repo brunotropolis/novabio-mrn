@@ -156,15 +156,6 @@ const phaseLink=(slug,p)=>`
     </div>
   </a>`;
 const home = head('Dayane Dos Anjos · Manual do Recém-Nascido', 0) + `
-  <a class="special sp-black" href="https://black.manualdorecemnascido.com.br/?${UTM}">
-    <span class="stile"><img src="${H}/tecnica-anjos.jpg" alt=""></span>
-    <span class="stxt">
-      <span class="skick">Black Friday da Day</span>
-      <div class="stitle">Black Maternity: entre no grupo VIP</div>
-      <span class="scta">Quero participar &gt;</span>
-    </span>
-    ${WCHEV}
-  </a>
   <h1 class="askphase">Em que fase você está?</h1>
 ${Object.entries(PHASES).map(([s,p])=>phaseLink(s,p)).join('')}
 
