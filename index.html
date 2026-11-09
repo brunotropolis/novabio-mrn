@@ -231,6 +231,18 @@
 .bfx-x{width:100%;border:0;background:none;color:#6F6157;font:500 13px Poppins,sans-serif;padding:8px}
 @keyframes bfx-up{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
 @media (prefers-reduced-motion:reduce){.bfb-tk,.bfx-card{animation:none}}
+
+/* BOTÃO BLACK MATERNITY (08/11, Bruno escolheu o B: divulgar em peso, antes do quiz). Tirar depois da Black = apagar este bloco + o <a class="bmc"> */
+.bmc{position:relative;display:block;margin:18px 0 0;padding:18px 18px 16px;border-radius:24px;overflow:hidden;text-decoration:none;color:#fff;text-align:center;
+  background:radial-gradient(120% 120% at 50% 0%,#4A1546 0%,#1E0B22 55%,#0E0612 100%);border:1.5px solid #FF4FA3;box-shadow:0 18px 34px -16px rgba(120,20,90,.7);animation:bm-glow 2.6s ease-out infinite}
+.bmc:before{content:"";position:absolute;top:0;bottom:0;width:35%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,180,220,.16),transparent);animation:bm-sh 3.6s ease-in-out infinite}
+.bmc-k{display:inline-block;font-size:.58rem;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#1a1205;background:linear-gradient(180deg,#FFD866,#FFC83D);border-radius:20px;padding:3px 10px}
+.bmc-logo{display:block;width:62%;max-width:230px;height:auto;margin:12px auto 8px}
+.bmc-s{display:block;font-size:.84rem;line-height:1.35;color:rgba(255,255,255,.85);max-width:290px;margin:0 auto}
+.bmc-bt{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:14px;background:#FF4FA3;color:#fff;font-weight:600;font-size:.88rem;border-radius:999px;padding:11px 14px}
+@keyframes bm-glow{0%{box-shadow:0 0 0 0 rgba(255,79,163,.45),0 18px 34px -16px rgba(120,20,90,.7)}70%{box-shadow:0 0 0 9px rgba(255,79,163,0),0 18px 34px -16px rgba(120,20,90,.7)}100%{box-shadow:0 0 0 0 rgba(255,79,163,0),0 18px 34px -16px rgba(120,20,90,.7)}}
+@keyframes bm-sh{0%{left:-60%}60%,100%{left:130%}}
+@media (prefers-reduced-motion:reduce){.bmc,.bmc:before{animation:none}}
 </style>
 </head>
 <body>
@@ -265,6 +277,9 @@
   </header>
 
   <div class="pickhint">Toque na sua fase 👇</div>
+
+  <!-- BLACK MATERNITY (08/11) -->
+  <a class="bmc" href="https://black.manualdorecemnascido.com.br/vip?origem=bio&utm_source=instagram&utm_medium=bio&utm_campaign=black-bio-botao"><span class="bmc-k">Black Friday · Gestantes</span><img class="bmc-logo" src="assets/black-maternity-logo.webp" alt="Black Maternity"><span class="bmc-s">Entre no grupo VIP e garanta a maior oferta da Day para quem está grávida</span><span class="bmc-bt">Quero entrar no grupo VIP ></span></a>
 
   <!-- QUIZ (chamada separada) -->
   <a class="quizcard" href="https://perfis.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=publico-q&utm_id=clicou-link&utm_content=link-da-bio&src=organico%7Cpublico-q%7Cclicou-link%7Clink-da-bio">
