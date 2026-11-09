@@ -145,6 +145,16 @@ for(const [slug,p] of Object.entries(PHASES)){
   fs.writeFileSync(path.join(D,slug,'index.html'), html);
 }
 
+
+// ---- BLACK_08_11 (Bruno): mesma barra "Black Friday do Manual" e botão Black Maternity da bio principal, copiados do ../index.html
+// (lá ficam nos blocos BARRA BLACK / BOTÃO BLACK MATERNITY). Tirar depois da Black = apagar este bloco e os usos no home.
+const BIO=fs.readFileSync(path.join(D,'..','index.html'),'utf8').replace(/\r/g,'');
+const pedaco=(ini,fim,extra=0)=>{const a=BIO.indexOf(ini);const z=BIO.indexOf(fim,a);if(a<0||z<0)throw new Error('bio sem '+ini);return BIO.slice(a,z+extra);};
+const BLACK_CSS='<style>'+pedaco('/* BARRA BLACK FRIDAY DO MANUAL','</style>')+'</style>';
+const BLACK_BAR=pedaco('<a class="bfb" href','</script>',9);
+const BM_BTN=pedaco('<a class="bmc" href','</a>',4).replace('src="assets/','src="../assets/').replace('origem=bio&utm_source=instagram&utm_medium=bio','origem=proposta&utm_source=proposta&utm_medium=tiktok-youtube');
+const OFERTAS='https://brunotropolis.github.io/bio-ofertas-maternas/?utm_source=proposta&utm_medium=tiktok-youtube&utm_campaign=organico';
+
 // ---- home
 const H='../assets/day';
 const phaseLink=(slug,p)=>`
@@ -157,9 +167,10 @@ const phaseLink=(slug,p)=>`
   </a>`;
 const home = head('Dayane Dos Anjos · Manual do Recém-Nascido', 0) + `
   <h1 class="askphase">Em que fase você está?</h1>
+  ${BM_BTN}
 ${Object.entries(PHASES).map(([s,p])=>phaseLink(s,p)).join('')}
 
-  <a class="special sp-ofertas" href="https://asofertasmaternas.com.br/l/entrar?${UTM}">
+  <a class="special sp-ofertas" href="${OFERTAS}">
     <span class="stile"><img src="${H}/ofertas-whats-day.jpg" alt=""></span>
     <span class="stxt">
       <span class="skick">As Ofertas Maternas</span>
@@ -174,5 +185,5 @@ ${Object.entries(PHASES).map(([s,p])=>phaseLink(s,p)).join('')}
     <a href="mailto:assessoria@manualdorecemnascido.com.br">assessoria@manualdorecemnascido.com.br</a>
   </div>
 ` + foot(0);
-fs.writeFileSync(path.join(D,'index.html'), home);
+fs.writeFileSync(path.join(D,'index.html'), home.replace('</head>', BLACK_CSS+'\n</head>').replace('<body>\n', '<body>\n'+BLACK_BAR+'\n'));
 console.log('ok');
