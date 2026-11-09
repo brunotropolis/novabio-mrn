@@ -279,7 +279,7 @@
   <div class="pickhint">Toque na sua fase 👇</div>
 
   <!-- BLACK MATERNITY (08/11) -->
-  <a class="bmc" href="https://black.manualdorecemnascido.com.br/vip?origem=bio&utm_source=instagram&utm_medium=bio&utm_campaign=black-bio-botao"><span class="bmc-k">Black Friday · Gestantes</span><img class="bmc-logo" src="assets/black-maternity-logo.webp" alt="Black Maternity"><span class="bmc-s">Entre no grupo VIP e garanta a maior oferta da Day para quem está grávida</span><span class="bmc-bt">Quero entrar no grupo VIP ></span></a>
+  <a class="bmc" href="https://black.manualdorecemnascido.com.br/vip?utm_source=instagram&utm_medium=bio&utm_campaign=black-bio-botao"><span class="bmc-k">Black Friday · Gestantes</span><img class="bmc-logo" src="assets/black-maternity-logo.webp" alt="Black Maternity"><span class="bmc-s">Entre no grupo VIP e garanta a maior oferta da Day para quem está grávida</span><span class="bmc-bt">Quero entrar no grupo VIP ></span></a>
 
   <!-- QUIZ (chamada separada) -->
   <a class="quizcard" href="https://perfis.manualdorecemnascido.com.br/?utm_source=instagram&utm_campaign=organico&utm_medium=publico-q&utm_id=clicou-link&utm_content=link-da-bio&src=organico%7Cpublico-q%7Cclicou-link%7Clink-da-bio">
@@ -444,10 +444,10 @@
     if(!net) net='instagram';
     // Aula de Autonomia de Sono + Ebook de sono: so pra quem chega do TikTok/YouTube
     if(net==='tiktok'||net==='youtube'){ document.querySelectorAll('.sp-aula,.sp-ebook').forEach(function(el){ el.hidden=false; }); }
-    var HOSTS=['perfis.','guiapega.','tdapocket.','db.','td.','mr.','fraldas.','clubedosono.'];
-    document.querySelectorAll('.wrap a[href^="http"]').forEach(function(a){
+    var HOSTS=['perfis.','guiapega.','tdapocket.','db.','td.','mr.','fraldas.','clubedosono.','black.','clube.'];  // black./clube. e a página de ofertas entraram 08/11 (Black: rede certa também pra quem vem do Facebook)
+    document.querySelectorAll('a[href^="http"]').forEach(function(a){
       var h; try{ h=new URL(a.href).hostname; }catch(e){ return; }
-      if(!HOSTS.some(function(p){ return h.indexOf(p)===0; })) return;
+      if(!HOSTS.some(function(p){ return h.indexOf(p)===0; }) && a.href.indexOf('/bio-ofertas-maternas/')<0) return;
       try{
         var u=new URL(a.href);
         u.searchParams.set('utm_source', net);

@@ -154,7 +154,7 @@ const BLACK_CSS='<style>'+pedaco('/* BARRA BLACK FRIDAY DO MANUAL','</style>')+'
 const BLACK_BAR=pedaco('<a class="bfb" href','</script>',9);
 // roda depois do bio.js (que reescreve o utm_source dos links), por isso vai no fim do body
 const BLACK_REDE='<script>/* rede de origem (tk/yt) nos links da Black e das Ofertas: origem e utm_source viram tiktok|youtube */(function(){try{var q=new URLSearchParams(location.search),r=(q.get("rede")||q.get("utm_source")||"").toLowerCase(),h=(location.hostname.split(".")[0]||"").toLowerCase();var n=(r==="tk"||r==="tiktok"||h==="tk")?"tiktok":(r==="yt"||r==="youtube"||h==="yt")?"youtube":"";if(!n)return;document.querySelectorAll("a.bmc,a.bfx-op,a.sp-ofertas").forEach(function(a){var u=new URL(a.href);u.searchParams.set("utm_source",n);u.searchParams.set("origem",n);a.href=u.toString();});}catch(e){}})();</script>';
-const BM_BTN=pedaco('<a class="bmc" href','</a>',4).replace('src="assets/','src="../assets/').replace('origem=bio&utm_source=instagram&utm_medium=bio','origem=proposta&utm_source=proposta&utm_medium=tiktok-youtube');
+const BM_BTN=pedaco('<a class="bmc" href','</a>',4).replace('src="assets/','src="../assets/').replace('utm_source=instagram&utm_medium=bio','utm_source=proposta&utm_medium=tiktok-youtube');
 const OFERTAS='https://brunotropolis.github.io/bio-ofertas-maternas/?utm_source=proposta&utm_medium=tiktok-youtube&utm_campaign=organico';
 
 // ---- home
